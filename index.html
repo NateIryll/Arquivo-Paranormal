@@ -451,6 +451,30 @@ input.adj{color:#fff;font-weight:700;text-decoration:underline dotted;text-under
 .wzstats{display:grid;grid-template-columns:1fr 1fr;gap:10px}.wzstats small{display:block;font-size:12px}.wzstats b{display:inline-block;background:#14120f;color:#f4efe5;padding:2px 8px;font-size:14px}
 .wzsk{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:4px}
 .wzsk label{display:flex;gap:6px;align-items:center;padding:6px;border:1px solid #7a6a50;font-size:13px;text-transform:none;letter-spacing:0;color:#16110b;min-height:36px}.wzsk label.on{background:#14120f;color:#f4efe5}.wzsk label.on *{color:#f4efe5}
+.bdv{overflow:auto;height:68vh;min-height:360px;border:3px solid #3b2a18;border-radius:12px;background:#7a5632;box-shadow:inset 0 0 60px rgba(0,0,0,.55)}
+.bdw{position:relative}.bds{position:absolute;left:0;top:0;width:2400px;height:1600px;transform-origin:0 0;background:radial-gradient(circle at 20% 30%,rgba(255,255,255,.06) 0 2px,transparent 3px) 0 0/26px 26px,radial-gradient(circle at 70% 60%,rgba(0,0,0,.18) 0 2px,transparent 3px) 0 0/34px 34px,linear-gradient(135deg,#8a6137,#6d4a29);touch-action:pan-x pan-y}
+.bds.pen,.bds.erase{touch-action:none;cursor:crosshair}.bds.link .bde{cursor:pointer}
+.bdsv0,.bdsv1{position:absolute;left:0;top:0;pointer-events:none}.bdsv0{z-index:1}.bdsv1{z-index:6}
+.bde{position:absolute;z-index:3;box-shadow:0 8px 14px rgba(0,0,0,.45);user-select:none}
+.bde.kn{min-height:130px;padding:24px 10px 10px;color:#241c10;transform:rotate(-1.2deg)}
+.bde.kn{touch-action:none;cursor:grab}.bde.kn textarea{pointer-events:none}.bde.kn.ed textarea{pointer-events:auto}
+.bde.kn textarea{width:100%;height:100px;min-height:0;background:transparent;border:0;color:#241c10;font:700 20px/1.1 'Reenie Beanie','Special Elite',cursive;resize:none;padding:0;outline:none;user-select:text}
+.bdg{position:absolute;top:0;left:0;right:0;height:22px;cursor:grab;touch-action:none}
+.bde.ki,.bde.kr{background:#f4efe3;padding:8px 8px 10px;color:#241c10;touch-action:none;cursor:grab;transform:rotate(1deg)}
+.bde.ki img,.bde.kr img{width:100%;display:block;pointer-events:none}.bdx{padding:6px 2px 0;font-size:13px;line-height:1.3}.bdx small{display:block;color:#5a4d3a;margin-top:4px}
+.bdpin{position:absolute;top:-6px;left:50%;width:16px;height:16px;margin-left:-8px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#ff8a80,#b3202b 60%,#5a0f15);box-shadow:0 3px 5px rgba(0,0,0,.5);z-index:4;pointer-events:none}
+.bde.lk{outline:3px solid #ff3b3b;outline-offset:2px}
+.bdd{position:absolute;top:-12px;right:-12px;width:28px;height:28px;min-height:0;padding:0;border-radius:50%;background:#111;color:#fff;clip-path:none;z-index:5;font-size:13px}
+.bdo{position:absolute;bottom:6px;right:6px;min-height:0;padding:3px 9px;font-size:11px;background:#241c10;color:#f4efe3}
+.bds.ro .bdg{cursor:default}
+@media(max-width:700px){.bdv{height:56vh;min-height:300px}.bdhd .note{display:none}.bdhd .ch{font-size:15px;letter-spacing:.05em}.bdtb{flex-wrap:nowrap!important;overflow-x:auto}.bdtb>*{flex:none}.bdd{width:36px;height:36px;top:-16px;right:-14px;font-size:16px}.bdo{padding:8px 12px;font-size:13px}.bdg{height:30px}.bde.kn{padding-top:32px}}
+@media(pointer:coarse){.bdd{width:36px;height:36px}.bdg{height:30px}.bde.kn{padding-top:32px}}
+@media(max-width:700px),(pointer:coarse){.bdtb .swb,.bdtb .swb.on{width:30px;height:30px;min-width:30px;min-height:30px}.bdtb button:not(.swb),.bdtb label.filebtn{min-height:36px!important;padding:4px 10px!important;font-size:11.5px!important;letter-spacing:.04em!important}.bdhd select{min-height:38px;max-width:52%}}
+label.filebtn.sm{display:inline-flex!important;align-items:center}
+body:has(.bdbox.full){overflow:hidden}.bdbox.full{position:fixed;inset:0;z-index:140;background:var(--bg);padding:10px max(10px,env(safe-area-inset-left)) calc(10px + env(safe-area-inset-bottom,0px));display:flex;flex-direction:column;overflow:hidden}.bdbox.full .bdv{flex:1;height:auto;min-height:0}.bdbox.full .bdhd .note,.bdbox.full .bdhd .ch{display:none}.bdbox.full .bdhd{margin-bottom:6px}.bdbox.full .bdhd select{flex:1;max-width:none}.bdbox.full>p.note{display:none}
+label.filebtn.sm{display:inline-block;padding:5px 11px;cursor:pointer;background:var(--panel2);border:1px solid var(--line);color:var(--ink);font:500 12.5px 'Oswald',sans-serif;letter-spacing:.1em;text-transform:uppercase;margin:0}
+.bds.link textarea{pointer-events:none}.bds.pen .bde,.bds.erase .bde{pointer-events:none}
+.rlr{display:flex;align-items:center;gap:10px;padding:10px 12px;margin:6px 0;text-transform:none;letter-spacing:0;font-size:15px;color:var(--ink);background:var(--panel2);border:1px solid var(--line);border-radius:10px;cursor:pointer}.rlr:has(input:checked){border-color:var(--acc)}.rlr input{width:20px;height:20px;flex:none}
 .wzr{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:6px 0;text-transform:none;letter-spacing:0;font-size:14px;color:#16110b}
 .wzp input[type=checkbox]{appearance:auto;width:24px;height:24px;accent-color:#14120f}
 .wzp textarea,.wzp input:not([type=checkbox]),.wzp select{background:transparent;border:0;border-bottom:1px dashed #16110b;border-radius:0;color:#16110b;font:14px 'Special Elite';padding:4px}
@@ -717,7 +741,6 @@ body{background:
 .pat{display:grid;grid-template-columns:repeat(5,1fr);gap:6px}.pat label{font-size:11px}.pat input{width:100%}.pw{flex-wrap:wrap;margin:4px 0;gap:4px}.pw input,.pw select{flex:1 1 80px;min-width:60px}.pev{margin:4px 0}.pet h3{font-size:13px;letter-spacing:.1em;text-transform:uppercase;margin:12px 0 4px}
 
 .hxh{font-size:13px;letter-spacing:.12em;text-transform:uppercase;margin:16px 0 6px;color:var(--acc)}.hxt{display:grid;gap:6px}.hxr{display:flex;flex-wrap:wrap;gap:6px;align-items:center;padding:6px;border:1px solid var(--line);border-radius:10px}.hxr.des{opacity:.7;border-style:dashed}.hxr input,.hxr select{flex:1 1 100px;min-width:80px}.hxl{margin-top:10px}.grid.g3{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px}.alt.on{border-color:var(--acc);color:var(--acc)}
-
 /* ===== v12 · dossiê refinado =====
    Camada final: uma tipografia de interface, cantos e bordas consistentes,
    fundo mais calmo e o tom de dossiê reservado a poucos detalhes. */
@@ -1827,9 +1850,10 @@ function diceClick(d){
 
 /* ---------- Home, personagens e campanhas ---------- */
 let home={tab:'p',q:'',sort:'rec',imp:false,newc:false,cn:'',cd:'',jc:''};
-let USERH=null,MYNAME='',CL={list:[],loading:false,loaded:false},campCur=null,campTab='p',CS={sheets:[],loading:false},PROF={},PA={};
+let MEM=[];let USERH=null,MYNAME='',CL={list:[],loading:false,loaded:false},campCur=null,campTab='p',CS={sheets:[],loading:false},PROF={},PA={};
 const fmtDate=t=>{try{return new Date(t).toLocaleString('pt-BR',{day:'2-digit',month:'2-digit',year:'numeric',hour:'2-digit',minute:'2-digit'})}catch(e){return''}};
 const noDb=()=>!DBH||!UID;
+const campPlayers=c=>[...new Set([...(c.players||[]),...MEM.map(x=>x.id),...CS.sheets.map(x=>x.uid)])].filter(x=>x&&x!==c.owner);
 const pname=id=>id===UID?(MYNAME||'Você'):(PROF[id]||'Jogador');
 async function loadProf(ids){ids=[...new Set(ids)].filter(i=>i&&!(i in PROF)&&i!==UID);if(!ids.length||!USERH)return;let ps={};try{ps=await USERH.profiles(ids)}catch(e){}
  for(const i of ids){let n=(ps[i]&&ps[i].name)||'Jogador';try{const d=await DBH.collection('profiles').doc(i).get();if(d.exists){const p=d.data();PA[i]=p;if(p.name)n=p.name}}catch(e){}PROF[i]=n}render()}
@@ -1850,16 +1874,17 @@ async function createCamp(){const name=home.cn.trim();if(!name){toast('Dê um no
 async function joinCamp(){const code=home.jc.trim().toUpperCase();if(!code)return;
  try{const d=await cdoc(code).get();if(!d.exists){toast('Campanha não encontrada.');return}const c=d.data();
   if(c.owner!==UID){if(!c.open){toast('Esta campanha não está aceitando novos jogadores.');return}
-   if(!(c.players||[]).includes(UID)){c.players=[...(c.players||[]),UID];await cdoc(code).set(c)}}
+   await DBH.collection('campaigns/'+code+'/members').doc(UID).set({t:Date.now()});const f0=await cdoc(code).get();const c1=f0.exists?f0.data():c;if(!(c1.players||[]).includes(UID)){c1.players=[...(c1.players||[]),UID];await cdoc(code).set(c1)}}
   await saveCodes([...(await myCodes()),code]);home.jc='';await loadCamps();openCamp(code);toast('Você entrou na campanha “'+c.name+'”.')}catch(e){wrErr(e)}}
 async function leaveCamp(code){const c=campOf(code);if(!c)return;
  try{if(isMaster(c)){const sn=await csh(code).get();for(const d of sn.docs)await csh(code).doc(d.id).delete();await cdoc(code).delete()}
-  else{c.players=(c.players||[]).filter(p=>p!==UID);await cdoc(code).set(strip(c));try{await csh(code).doc(UID).delete()}catch(e){}}
+  else{try{await DBH.collection('campaigns/'+code+'/members').doc(UID).delete()}catch(e){}{const f0=await cdoc(code).get(),c1=f0.exists?f0.data():strip(c);c1.players=(c1.players||[]).filter(p=>p!==UID);await cdoc(code).set(c1)}try{await csh(code).doc(UID).delete()}catch(e){}}
   await saveCodes((await myCodes()).filter(x=>x!==code));for(const s of sheets)if(s.camp===code){s.camp='';persist(s)}
   campCur=null;await loadCamps();toast(isMaster(c)?'Campanha encerrada.':'Você saiu da campanha.')}catch(e){wrErr(e)}}
 const strip=c=>{const o=Object.assign({},c);delete o.code;return o};
-async function saveCamp(c){try{await cdoc(c.code).set(strip(c))}catch(e){wrErr(e)}}
-function openCamp(code){ivUnsub();campCur=code;campTab='p';loadCampSheets();render();scrollTo(0,0)}
+async function saveCamp(c,fresh=true){try{if(fresh){const f0=await cdoc(c.code).get();if(f0.exists)c.players=[...new Set([...(f0.data().players||[]),...(c.players||[])])]}await cdoc(c.code).set(strip(c))}catch(e){wrErr(e)}}
+async function refreshCamp(code){if(!code||noDb())return;try{const d=await cdoc(code).get();if(!d.exists)return;const i=CL.list.findIndex(x=>x.code===code);if(i>=0)CL.list[i]=Object.assign({code},d.data());loadProf([d.data().owner,...(d.data().players||[])]);if(campCur===code)render()}catch(e){}}
+function openCamp(code){ivUnsub();campCur=code;campTab='p';loadCampSheets();refreshCamp(code);render();scrollTo(0,0)}
 async function loadCampSheets(){const code=campCur;if(!code||noDb())return;CS.loading=true;
  try{const sn=await csh(code).get();CS.sheets=sn.docs.map(d=>Object.assign({sid:d.id},d.data()));loadProf(CS.sheets.map(x=>x.uid))}catch(e){CS.sheets=[]}
  CS.loading=false;render()}
@@ -1913,7 +1938,7 @@ function homeView(){
  return `<div class="brandrow"><div class="sigil">${SIGIL}</div><div><small class="cls">ORDO REALITAS · ACESSO RESTRITO</small><h1>Jogar</h1></div><button class="alt gear av0" data-ht="u" aria-label="Perfil">${PR.av?`<img src="${PR.av}" alt="">`:I.user}</button><button class="alt gear" data-a="openbank:rit" style="margin-left:auto" aria-label="Banco de dados">${I.book}</button><button class="alt gear" data-a="cfg" aria-label="Configurações">${I.gear}</button></div>
  <p class="sub">Suas fichas, campanhas e mundos em um só lugar. ${DBH?'Salvos na sua conta.':'Salvos neste navegador.'}</p>${tabs}${body}`}
 function campView(){const c=campOf(campCur);if(!c){return `<div class="topbar"><button class="alt" data-a="cback">‹ Voltar</button></div><div class="empty">Campanha não encontrada.</div>`}
- const m=isMaster(c),tabs=[['p','Personagens',I.user],['j','Jogadores',I.users],['c','Calendário',I.cal],['i','Investigação',I.search],['n','Anotações',I.book]].concat((c.rules||[]).length?[['r','Regras',I.gear]]:[]);if(m)tabs.push(['s','Escudo do Mestre',I.shield]);if(campTab==='s'&&!m)campTab='p';if(campTab!=='s'&&RL.code)shUnsub();
+ const m=isMaster(c),tabs=[['p','Personagens',I.user],['j','Jogadores',I.users],['c','Calendário',I.cal],['i','Investigação',I.search],['n','Quadro',I.book]].concat((c.rules||[]).length?[['r','Regras',I.gear]]:[]);if(m)tabs.push(['s','Escudo do Mestre',I.shield]);if(campTab==='s'&&!m)campTab='p';if(campTab!=='s'&&RL.code)shUnsub();
  let body='';
  if(campTab==='p'){
   const mine=sheets.filter(s=>s.camp!==c.code);
@@ -1923,9 +1948,9 @@ function campView(){const c=campOf(campCur);if(!c){return `<div class="topbar"><
  if(campTab==='s')body=shView(c);
  if(campTab==='r')body=campRulesView(c);
  if(campTab==='i')body=investView(c);
- if(campTab==='n')body=notesView(c);
+ if(campTab==='n')body=boardView(c);
  if(campTab==='j'){
-  const ids=[c.owner,...(c.players||[])];
+  ivSub();const ids=[c.owner,...campPlayers(c)];
   body=`<div class="tools"><div style="flex:1"><h2 class="ch">Jogadores</h2><p class="note">${ids.length} participante(s) na campanha</p></div>${m?`<label class="tg" style="border:0;padding:0"><input type="checkbox" data-copenchk ${c.open?'checked':''}><span class="tgk"></span><span><b>${c.open?'aberto':'fechado'}</b></span></label>`:''}</div>
   <div class="card invc"><small class="cls">CÓDIGO DE CONVITE</small><div class="code">${esc(c.code)}</div><div class="row"><button data-a="ccopy">Copiar convite</button></div><p class="note" style="margin-bottom:0">Quem receber precisa abrir este site (compartilhe o link pelo menu Compartilhar do Claude, com permissão de colaborador) e usar <b>Entrar com código</b> na aba Campanhas.</p></div>
   ${ids.map(id=>`<div class="pl">${avEl(id)}<b>${esc(pname(id))}</b>${PA[id]&&PA[id].bio?`<small class="note" style="margin:0 6px">${esc(PA[id].bio.slice(0,80))}</small>`:''}${id===UID?'<span class="pill">Você</span>':''}<span class="pill ${id===c.owner?'warn':''}">${id===c.owner?'Mestre':'Jogador'}</span><span style="flex:1"></span>${m&&id!==c.owner?`<button class="alt sm" data-a="ckick:${esc(id)}">Remover</button>`:''}</div>`).join('')}`}
@@ -1941,7 +1966,7 @@ async function campClick(t){const d=t.dataset;
  if(d.ht){home.tab=d.ht;render();return true}
  if(d.crsa!==undefined){await crsAct(d.crsa);return true}
  if(d.copen){openCamp(d.copen);return true}
- if(d.ct){campTab=d.ct;render();return true}
+ if(d.ct){campTab=d.ct;render();if(d.ct==='j')refreshCamp(campCur);return true}
  if(d.cimp){const x=CS.sheets.find(y=>y.sid===d.cimp);if(x){const n=normalize(JSON.parse(x.json));n.id=uid();n.camp='';sheets.unshift(n);persist(n);toast('Cópia da ficha de '+x.nome+' importada.')}return true}
  const a=d.a||'';
  if(a==='himp'){home.imp=!home.imp;render();return true}
@@ -1951,11 +1976,11 @@ async function campClick(t){const d=t.dataset;
  if(a==='cmake'){await createCamp();return true}
  if(a==='cjoin'){await joinCamp();return true}
  if(a==='cback'){shUnsub();ivUnsub();sh.sel=null;sh.nl=false;sh.notes=null;campCur=null;render();return true}
- if(a==='cleave'){await leaveCamp(campCur);return true}
+ if(a==='cleave'){const c0=campOf(campCur);if(!(await askOk(isMaster(c0)?'Encerrar a campanha apaga a campanha e as fichas vinculadas para todos. Continuar?':'Sair desta campanha?',isMaster(c0)?'Encerrar':'Sair')))return true;await leaveCamp(campCur);return true}
  if(a==='ccopy'){const c=campOf(campCur),tx=`Venha jogar “${c.name}” comigo! Abra ${location.href} e, na aba Campanhas, use “Entrar com código”: ${c.code}`;try{await navigator.clipboard.writeText(tx);toast('Convite copiado!')}catch(e){toast('Código: '+c.code,6000)}return true}
  if(a==='clink'){const el=document.querySelector('[data-clink]'),s=sheets.find(x=>x.id===(el&&el.value));if(!s){toast('Escolha uma ficha.');return true}s.camp=campCur;persist(s);pushSheet(s);setTimeout(loadCampSheets,2200);render();toast('Ficha vinculada.');return true}
  if(a.startsWith('cunlink:')){const id=a.slice(8),s=sheets.find(x=>x.id===id);if(s){s.camp='';persist(s)}try{await csh(campCur).doc(id).delete()}catch(e){}await loadCampSheets();return true}
- if(a.startsWith('ckick:')){const c=campOf(campCur),id=a.slice(6);c.players=(c.players||[]).filter(p=>p!==id);await saveCamp(c);render();return true}
+ if(a.startsWith('ckick:')){const c=campOf(campCur),id=a.slice(6);if(!(await askOk('Remover '+pname(id)+' da campanha?','Remover')))return true;c.players=(c.players||[]).filter(p=>p!==id);await saveCamp(c,false);try{await DBH.collection('campaigns/'+campCur+'/members').doc(id).delete()}catch(e){}try{await csh(campCur).doc(id).delete()}catch(e){}MEM=MEM.filter(x=>x.id!==id);CS.sheets=CS.sheets.filter(x=>x.uid!==id);render();return true}
  if(a==='csadd'){const c=campOf(campCur);if(!home.sd){toast('Escolha data e hora.');return true}c.sess=[...(c.sess||[]),{id:uid(),t:(home.sn||'Sessão').slice(0,60),d:home.sd,n:(home.sx||'').slice(0,200)}];home.sn=home.sd=home.sx='';await saveCamp(c);render();return true}
  if(a.startsWith('csdel:')){const c=campOf(campCur);c.sess=(c.sess||[]).filter(x=>x.id!==a.slice(6));await saveCamp(c);render();return true}
  return false}
@@ -2206,9 +2231,9 @@ function hbWz(v){const p=v.split(':'),a=p[1];
   render();return true}
  const k=p[2],id=p[3];
  if(a==='edit'){const x=(k==='o'?HB.o:HB.c).find(y=>y.id===id);if(!x)return true;HBF.tab=k;if(k==='o'){HBF.o=Object.assign(blankHO(),x);HBF.eo=id}else{HBF.c=Object.assign(blankHC(),x,{prog:[...x.prog,...Array(20)].slice(0,20).map(z=>z||'')});HBF.ec=id}render();scrollTo(0,0);return true}
- if(a==='del'){const arr=k==='o'?HB.o:HB.c,x=arr.find(y=>y.id===id);if(!x||!confirm('Apagar “'+x.n+'”? Fichas já criadas continuam com ela.'))return true;
-  if(k==='o')HB.o=HB.o.filter(y=>y.id!==id);else{HB.c=HB.c.filter(y=>y.id!==id);if(wz.classe===x.n)wz.classe='Combatente'}
-  hbSave();hbSync();render();return true}
+ if(a==='del'){const arr=k==='o'?HB.o:HB.c,x=arr.find(y=>y.id===id);if(!x)return true;
+  askOk('Apagar “'+x.n+'”? Fichas já criadas continuam com ela.','Apagar').then(ok=>{if(!ok)return;if(k==='o')HB.o=HB.o.filter(y=>y.id!==id);else{HB.c=HB.c.filter(y=>y.id!==id);if(wz.classe===x.n)wz.classe='Combatente'}
+  hbSave();hbSync();render()});return true}
  if(a==='use'){const x=(k==='o'?HB.o:HB.c).find(y=>y.id===id);if(!x)return true;
   if(k==='o'){wz.origem=x.n;wz.osrc='Homebrew';wz.free=wz.free.filter(z=>!origSkills().includes(z));wz.step=2}else{wz.classe=x.n;wz.free=[];wz.step=3}
   render();scrollTo(0,0);return true}
@@ -2484,15 +2509,17 @@ function bkMatch(n){const q=norm(n);
  if(/arsenal/i.test(n))return'eaf1';if(/biblioteca/i.test(n))return'eaf2';if(/marcas/i.test(n))return'eaf3';if(/portador/i.test(n))return'eaf4';if(/sobrevivendo/i.test(n))return'sah';const m=n.match(/secretos[-_ .]*0?(\d)/i);if(m)return'as0'+m[1];if(/ordem[-_ ]*paranormal|livro/i.test(n))return'core';return''}
 
 /* ---------- Investigação (pistas) e Anotações dos jogadores ---------- */
-let IV={f:'',items:[],ld:false,sh:[],nt:[],code:null,u1:null,u2:null,view:null,rel:null,ed:null,ne:null,nq:'',busy:false};
+let IV={pn:[],u3:null,u4:null,nf:{q:'',tag:'',who:''},nsec:'',f:'',items:[],ld:false,sh:[],nt:[],code:null,u1:null,u2:null,view:null,rel:null,ed:null,ne:null,nq:'',busy:false};
 const ivMine=()=>DBH.collection('data/users/'+UID+'/inv_'+campCur+'/items');
 const ivShc=c=>DBH.collection('campaigns/'+c+'/inv');
 const ivNtc=c=>DBH.collection('campaigns/'+c+'/notes');
-function ivUnsub(){try{IV.u1&&IV.u1()}catch(e){}try{IV.u2&&IV.u2()}catch(e){}IV.u1=IV.u2=null;IV.code=null;IV.sh=[];IV.nt=[];IV.ld=false;IV.items=[];IV.f='';IV.view=IV.rel=IV.ed=IV.ne=null}
+function ivUnsub(){try{IV.u1&&IV.u1()}catch(e){}try{IV.u2&&IV.u2()}catch(e){}try{IV.u3&&IV.u3()}catch(e){}try{IV.u4&&IV.u4()}catch(e){}try{BD.u&&BD.u()}catch(e){}try{BD.u2&&BD.u2()}catch(e){}BD.u=BD.u2=null;BD.code=null;BD.data=null;IV.u1=IV.u2=IV.u3=IV.u4=null;IV.pn=[];MEM=[];IV.code=null;IV.sh=[];IV.nt=[];IV.ld=false;IV.items=[];IV.f='';IV.view=IV.rel=IV.ed=IV.ne=null;IV.nf={q:'',tag:'',who:''};IV.nsec=''}
 function ivSub(){const code=campCur;if(!code||noDb()||IV.code===code)return;ivUnsub();IV.code=code;
  const same=(a,b)=>JSON.stringify(a)===JSON.stringify(b);
  try{IV.u1=ivShc(code).onSnapshot(sn=>{const n=sn.docs.map(d=>Object.assign({id:d.id},d.data()));if(same(n,IV.sh))return;IV.sh=n;if(campCur===code&&campTab==='i')render()},()=>{})}catch(e){}
  try{IV.u2=ivNtc(code).onSnapshot(sn=>{const n=sn.docs.map(d=>Object.assign({id:d.id},d.data()));if(same(n,IV.nt))return;IV.nt=n;loadProf(n.map(x=>x.uid));if(campCur===code&&campTab==='n')render()},()=>{})}catch(e){}
+ try{IV.u3=DBH.collection('data/users/'+UID+'/nt_'+code+'/items').onSnapshot(sn=>{const n=sn.docs.map(d=>Object.assign({id:d.id,uid:UID,vis:'me'},d.data()));if(same(n,IV.pn))return;IV.pn=n;if(campCur===code&&campTab==='n')render()},()=>{})}catch(e){}
+ try{IV.u4=DBH.collection('campaigns/'+code+'/members').onSnapshot(sn=>{const n=sn.docs.map(d=>({id:d.id}));if(same(n,MEM))return;MEM=n;loadProf(n.map(x=>x.id));if(campCur===code&&(campTab==='j'||campTab==='i'||campTab==='n'))render()},()=>{})}catch(e){}
  const c=campOf(code);if(c&&isMaster(c))ivLoad()}
 async function ivLoad(){if(IV.ld)return;IV.ld=true;try{const sn=await ivMine().get();IV.items=sn.docs.map(d=>Object.assign({id:d.id},d.data()));render()}catch(e){IV.items=[]}}
 const ivDesc=id=>{const o=[];for(const x of IV.items)if(x.p===id){o.push(x.id,...ivDesc(x.id))}return o};
@@ -2532,27 +2559,131 @@ function ivViewer(){if(!IV.view)return'';const c=campOf(campCur),m=c&&isMaster(c
  ${it.k==='img'?`<img class="ivimg" src="${it.d}" alt="${esc(it.n)}">`:it.k==='text'?`<div class="ivtx">${esc(it.b||'')}</div>`:`<p>${esc(it.fn||'arquivo')}</p><button class="alt" data-a="iv:dl:${esc(it.id)}">Baixar arquivo</button>`}
  ${it.k==='img'||(it.k==='text'&&it.d)?'':''}<div class="row" style="margin-top:14px;justify-content:flex-end">${it.k==='img'?`<button class="alt" data-a="iv:dl:${esc(it.id)}">Baixar</button>`:''}<button data-a="iv:close">Fechar</button></div></div></div>`}
 function ivModals(){let h=ivViewer();
- if(IV.rel){const it=IV.items.find(x=>x.id===IV.rel.id),c=campOf(campCur),ps=(c&&c.players)||[];
+ if(IV.rel){const it=IV.items.find(x=>x.id===IV.rel.id),c=campOf(campCur),ps=c?campPlayers(c):[];
   h+=`<div class="modal" role="dialog" aria-modal="true"><div class="mbox"><div class="mhead"><div><small>LIBERAR PARA OS JOGADORES</small><h2>${esc(it?it.n:'')}</h2></div></div>
-  ${[['all','Todos os jogadores'],['sel','Somente jogadores escolhidos'],['none','Ninguém (privado)']].map(([k,l])=>`<label class="wzr" style="display:flex;gap:8px;margin:6px 0"><input type="radio" name="ivm" data-ivrel="${k}" ${IV.rel.m===k?'checked':''}><span>${l}</span></label>`).join('')}
-  ${IV.rel.m==='sel'?`<div class="card" style="margin-top:8px">${ps.length?ps.map(p=>`<label class="wzr" style="display:flex;gap:8px;margin:4px 0"><input type="checkbox" data-ivu="${esc(p)}" ${IV.rel.u.includes(p)?'checked':''}><span>${esc(pname(p))}</span></label>`).join(''):'<p class="note">Ainda não há jogadores na campanha.</p>'}</div>`:''}
+  ${[['all','Todos os jogadores'],['sel','Somente jogadores escolhidos'],['none','Ninguém (privado)']].map(([k,l])=>`<label class="rlr" style="display:flex;gap:8px;margin:6px 0"><input type="radio" name="ivm" data-ivrel="${k}" ${IV.rel.m===k?'checked':''}><span>${l}</span></label>`).join('')}
+  ${IV.rel.m==='sel'?`<div class="card" style="margin-top:8px">${ps.length?ps.map(p=>`<label class="rlr" style="display:flex;gap:8px;margin:4px 0"><input type="checkbox" data-ivu="${esc(p)}" ${IV.rel.u.includes(p)?'checked':''}><span>${esc(pname(p))}</span></label>`).join(''):'<p class="note">Ainda não há jogadores na campanha.</p>'}</div>`:''}
   ${it&&it.k==='folder'?'<p class="note">Vale para tudo que está dentro da pasta.</p>':''}
   <div class="row" style="margin-top:14px;justify-content:flex-end"><button class="alt" data-a="iv:relno">Cancelar</button><button data-a="iv:relok">Aplicar</button></div></div></div>`}
  if(IV.ed){const e=IV.ed;h+=`<div class="modal" role="dialog" aria-modal="true"><div class="mbox"><div class="mhead"><div><small>${e.k==='folder'?'PASTA':'PISTA DE TEXTO'}</small><h2>${e.id?'Editar':'Nova'} ${e.k==='folder'?'pasta':'pista'}</h2></div></div>
   <label>Nome</label><input data-ivf="n" value="${esc(e.n)}" maxlength="80">${e.k==='text'?`<label style="margin-top:8px">Conteúdo</label><textarea data-ivf="b" style="min-height:200px">${esc(e.b||'')}</textarea>`:''}
   <div class="row" style="margin-top:14px;justify-content:flex-end"><button class="alt" data-a="iv:edno">Cancelar</button><button data-a="iv:edok">Salvar</button></div></div></div>`}
- if(IV.ne){const e=IV.ne;h+=`<div class="modal" role="dialog" aria-modal="true"><div class="mbox"><div class="mhead"><div><small>ANOTAÇÃO</small><h2>${e.id?'Editar anotação':'Nova anotação'}</h2></div></div>
-  <label>Título</label><input data-ivn="t" value="${esc(e.t)}" maxlength="60"><label style="margin-top:8px">Texto</label><textarea data-ivn="b" style="min-height:200px" maxlength="3000">${esc(e.b)}</textarea>
+ if(IV.ne){const e=IV.ne,c=campOf(campCur),m=c&&isMaster(c),ps=c?campPlayers(c):[];
+  const vo=m?[['me','Só eu'],['all','Todos os jogadores'],['sel','Jogadores escolhidos']]:[['me','Só eu (privada)'],['master','Eu e o mestre'],['all','Todos da mesa']];
+  h+=`<div class="modal" role="dialog" aria-modal="true"><div class="mbox"><div class="mhead"><div><small>ANOTAÇÃO</small><h2>${e.id?'Editar anotação':'Nova anotação'}</h2></div></div>
+  <label>Título</label><input data-ivn="t" value="${esc(e.t)}" maxlength="60">
+  <div class="grid g2" style="margin-top:8px"><div><label>Categoria</label><select data-ivn="tag">${NTAGS.map(t=>`<option ${e.tag===t?'selected':''}>${t}</option>`).join('')}</select></div>
+  <div><label>Quem pode ver</label><select data-ivnv>${vo.map(([k,l])=>`<option value="${k}" ${e.vis===k?'selected':''}>${l}</option>`).join('')}</select></div></div>
+  ${e.vis==='sel'?`<div class="card" style="margin:8px 0 0">${ps.length?ps.map(x=>`<label class="rlr"><input type="checkbox" data-ivnu="${esc(x)}" ${(e.to||[]).includes(x)?'checked':''}><span>${esc(pname(x))}</span></label>`).join(''):'<p class="note">Ainda não há jogadores na campanha.</p>'}</div>`:''}
+  <label style="margin-top:8px">Cor</label><div class="row">${NCOL.map(k=>`<button class="swb ${e.col===k?'on':''}" style="--c:${k}" data-a="iv:ncol:${k}" aria-label="Cor ${k}"></button>`).join('')}</div>
+  <label style="margin-top:8px">Texto</label><textarea data-ivn="b" style="min-height:200px" maxlength="6000">${esc(e.b)}</textarea>
+  <label class="rlr" style="margin-top:8px"><input type="checkbox" data-ivnp ${e.pin?'checked':''}><span>Fixar no topo</span></label>
   <div class="row" style="margin-top:14px;justify-content:flex-end"><button class="alt" data-a="iv:neno">Cancelar</button><button data-a="iv:neok">Salvar</button></div></div></div>`}
  return h}
-const nbox=(n,own)=>`<article class="nbox"><h3>${esc(n.t||'Sem título')}</h3><p>${esc(n.b||'')}</p><div class="row" style="justify-content:flex-end">${own?`<button data-a="iv:nedit:${esc(n.id)}">Editar</button><button data-a="iv:ndel:${esc(n.id)}">Excluir</button>`:''}</div></article>`;
-function notesView(c){ivSub();const m=isMaster(c);
- if(!m){const mine=IV.nt.filter(x=>x.uid===UID).sort((a,b)=>num(b.upd)-num(a.upd));
-  return `<div class="tools"><div style="flex:1"><h2 class="ch">Minhas anotações</h2><p class="note">O mestre pode ler suas anotações. Os outros jogadores não as veem na tela.</p></div><button data-a="iv:nnew">+ Nova anotação</button></div><div class="nlist">${mine.map(n=>nbox(n,true)).join('')||'<div class="empty">Nenhuma anotação ainda.</div>'}</div>`}
- const ids=[...new Set(IV.nt.map(x=>x.uid))],sel=IV.nq,list=IV.nt.filter(x=>!sel||x.uid===sel).sort((a,b)=>num(b.upd)-num(a.upd));
- return `<div class="tools"><div style="flex:1"><h2 class="ch">Anotações dos jogadores</h2><p class="note">Visão do mestre: somente leitura.</p></div><select data-ivq aria-label="Jogador"><option value="">Todos os jogadores</option>${ids.map(u=>`<option value="${esc(u)}" ${sel===u?'selected':''}>${esc(pname(u))}</option>`).join('')}</select></div>
- <div class="nlist">${list.map(n=>`<div><small class="cls">${esc(pname(n.uid))}</small>${nbox(n,false)}</div>`).join('')||'<div class="empty">Os jogadores ainda não escreveram anotações.</div>'}</div>`}
+const NTAGS=['Geral','Pista','NPC','Local','Item','Teoria','Sessão','Missão'],NCOL=['#d5a21f','#d4202b','#5fcf7a','#2f6fdb','#8e63ff','#8a8a8a'];
+const nVis=n=>n.vis||'master';
+function nSeen(n,m){return n.uid===UID||nVis(n)==='all'||(nVis(n)==='sel'&&(n.to||[]).includes(UID))||(m&&nVis(n)==='master')}
+const nVisL=(n,m)=>{const v=nVis(n);return v==='me'?'Só eu':v==='all'?'Todos':v==='sel'?'Escolhidos':'Mestre'};
+const nbox=(n,own,m)=>`<article class="nbox" style="border-color:${n.col||'#d5a21f'}"><div class="row" style="gap:6px"><span class="pill">${esc(n.tag||'Geral')}</span><span class="pill ${nVis(n)==='me'?'':'ok'}">${nVisL(n,m)}</span>${n.pin?'<span class="pill warn">Fixada</span>':''}</div><h3 style="color:${n.col||'#ffd23a'}">${esc(n.t||'Sem título')}</h3><p>${esc(n.b||'')}</p><div class="row" style="justify-content:flex-end">${own?`<button data-a="iv:npin:${esc(n.id)}">${n.pin?'Desafixar':'Fixar'}</button><button data-a="iv:nedit:${esc(n.id)}">Editar</button>`:''}${own||m?`<button data-a="iv:ndel:${esc(n.id)}">Excluir</button>`:''}</div></article>`;
+function notesView(c){ivSub();const m=isMaster(c),F=IV.nf,sec=IV.nsec||'mine';
+ const mine=[...IV.pn,...IV.nt.filter(x=>x.uid===UID)],grp=IV.nt.filter(x=>x.uid!==UID&&nSeen(x,m));
+ let list=sec==='mine'?mine:grp;
+ const q=F.q.trim().toLowerCase();
+ list=list.filter(n=>(!F.tag||(n.tag||'Geral')===F.tag)&&(!F.who||n.uid===F.who)&&(!q||((n.t||'')+' '+(n.b||'')).toLowerCase().includes(q))).sort((a,b)=>(b.pin?1:0)-(a.pin?1:0)||num(b.upd)-num(a.upd));
+ const who=[...new Set(grp.map(x=>x.uid))];
+ return `<div class="tools"><div style="flex:1"><h2 class="ch">Anotações</h2><p class="note">${m?'Suas anotações de mestre e o que os jogadores compartilharam com você.':'Suas anotações e o que o grupo compartilhou. Anotações “Só eu” ficam privadas, nem o mestre vê.'}</p></div><button data-a="iv:nnew">+ Nova anotação</button></div>
+ <div class="seg3" role="tablist"><button class="${sec==='mine'?'on':''}" data-a="iv:nsec:mine">Minhas (${mine.length})</button><button class="${sec==='grp'?'on':''}" data-a="iv:nsec:grp">${m?'Dos jogadores':'Do grupo'} (${grp.length})</button></div>
+ <div class="tools"><div class="sbx">${I.search}<input type="search" data-ivnq value="${esc(F.q)}" placeholder="Buscar nas anotações" aria-label="Buscar"></div><select data-ivnt aria-label="Categoria"><option value="">Todas as categorias</option>${NTAGS.map(t=>`<option ${F.tag===t?'selected':''}>${t}</option>`).join('')}</select>${sec==='grp'&&who.length?`<select data-ivnw aria-label="Jogador"><option value="">Todos os autores</option>${who.map(u=>`<option value="${esc(u)}" ${F.who===u?'selected':''}>${esc(pname(u))}</option>`).join('')}</select>`:''}</div>
+ <div class="nlist">${list.map(n=>sec==='mine'?nbox(n,true,m):`<div><small class="cls">${esc(pname(n.uid))}</small>${nbox(n,false,m)}</div>`).join('')||'<div class="empty">Nada por aqui ainda.</div>'}</div>`}
+/* ---------- Quadro de investigação ---------- */
+const BDW=2400,BDH=1600,BDC=['#ffe66d','#ff9f9f','#9fe3a5','#9fd0ff','#d7b8ff','#ffd0a1'],BDP=['#d4202b','#111111','#2f6fdb','#2f9e44','#e0a030','#ffffff'];
+let BD={full:false,mesa:{},mloaded:false,u2:null,msync:{},code:null,view:null,data:null,mode:'move',col:BDC[0],pen:BDP[0],w:3,z:.8,link:null,lib:false,u:null,all:{},dirty:false,st:null,sc:{x:0,y:0},ro:false,load:false,drag:null};
+const bdEmpty=()=>({e:[],l:[],s:[]});
+const bdCol=c=>DBH.collection('campaigns/'+c+'/boards');
+function bdSub(){const code=campCur;if(!code||noDb()||BD.code===code)return;try{BD.u&&BD.u()}catch(e){}
+ try{BD.u2&&BD.u2()}catch(e){}BD.mesa={};BD.mloaded=false;BD.msync={};BD.code=code;BD.view=UID;BD.data=null;BD.all={};BD.load=false;BD.link=null;BD.lib=false;BD.dirty=false;BD.sc={x:0,y:0};BD.mode='move';if(innerWidth<700)BD.z=Math.min(BD.z,.5);
+ try{BD.u2=DBH.collection('campaigns/'+code+'/mesa').onSnapshot(sn=>{const m={};sn.docs.forEach(d=>{m[d.id]=d.data()});BD.mesa=m;BD.mloaded=true;if(BD.view==='_mesa')bdSync()},()=>{BD.mloaded=true})}catch(e){}
+ try{BD.u=bdCol(code).onSnapshot(sn=>{const all={};sn.docs.forEach(d=>{all[d.id]=d.data()});BD.all=all;bdSync()},()=>{if(!BD.data){BD.data=bdEmpty();BD.load=true;bdMount()}})}catch(e){BD.data=bdEmpty();BD.load=true}}
+const bdSj=o=>JSON.stringify(o,Object.keys(o).sort());
+function bdBuildMesa(){const e=[],l=[],s=[];for(const[id,d]of Object.entries(BD.mesa)){const o=Object.assign({},d);delete o.q;if(d.q==='e'){o.id=id;e.push(o)}else if(d.q==='l')l.push({a:d.a,b:d.b});else if(d.q==='s'){o.id=id;s.push(o)}}s.sort((a,b)=>(a.o||0)-(b.o||0));return{e,l,s}}
+function bdSaveMesa(){BD.dirty=true;clearTimeout(BD.st);const code=BD.code;BD.st=setTimeout(async()=>{const want={};
+ BD.data.e.forEach(e=>{const o=Object.assign({q:'e'},e);delete o.id;want[e.id]=o});BD.data.l.forEach(l=>{want['l_'+l.a+'_'+l.b]={q:'l',a:l.a,b:l.b}});BD.data.s.forEach(x=>{const o=Object.assign({q:'s'},x);delete o.id;want[x.id]=o});
+ const col=DBH.collection('campaigns/'+code+'/mesa'),ops=[];
+ for(const id in want){const j=bdSj(want[id]);if(BD.msync[id]!==j){BD.msync[id]=j;ops.push(col.doc(id).set(want[id]))}}
+ for(const id in BD.msync)if(!(id in want)){delete BD.msync[id];ops.push(col.doc(id).delete())}
+ try{await Promise.all(ops)}catch(e){wrErr(e)}BD.dirty=false;bdSync()},350)}
+function bdSync(){if(campTab!=='n')return;
+ if(BD.view==='_mesa'){const a=document.activeElement;if(!BD.mloaded||BD.drag||BD.dirty||(a&&a.dataset&&a.dataset.bdt!==undefined))return;BD.data=bdBuildMesa();BD.msync={};for(const k in BD.mesa)BD.msync[k]=bdSj(BD.mesa[k]);(document.querySelector('.bds')?bdMount():render());return}
+ if(BD.dirty&&BD.view===UID)return;const x=BD.all[BD.view];
+ if(BD.view!==UID||!BD.load){let d=null;try{d=x&&JSON.parse(x.json)}catch(e){}BD.data=Object.assign(bdEmpty(),d||{});if(BD.view===UID)BD.load=true}
+ if(!BD.drag)(document.querySelector('.bds')?bdMount():render())}
+function bdSwitch(u){BD.view=u;BD.load=false;BD.dirty=false;BD.link=null;BD.mode='move';BD.data=null;bdSync();render()}
+document.addEventListener('focusin',e=>{const t=e.target;if(t&&t.dataset&&t.dataset.bdt!==undefined)t.closest('.bde').classList.add('ed')});
+document.addEventListener('focusout',e=>{if(e.target&&e.target.closest){const b=e.target.closest('.bde');if(b)b.classList.remove('ed')}if(BD.view==='_mesa'&&e.target&&e.target.dataset&&e.target.dataset.bdt!==undefined)setTimeout(bdSync,50)});
+function bdSave(){if(BD.view==='_mesa')return bdSaveMesa();if(BD.view!==UID)return;BD.dirty=true;clearTimeout(BD.st);const code=BD.code;BD.st=setTimeout(async()=>{const json=JSON.stringify(BD.data);if(json.length>850000){toast('Quadro grande demais para salvar. Remova imagens.',6000);return}try{await bdCol(code).doc(UID).set({uid:UID,json,upd:Date.now()});BD.dirty=false}catch(e){wrErr(e)}},700)}
+const bdItems=()=>{const c=campOf(campCur);return c&&isMaster(c)?IV.items:IV.sh.filter(x=>(x.vis||[]).includes('all')||(x.vis||[]).includes(UID))};
+const bdItem=id=>bdItems().find(x=>x.id===id);
+function bdPath(it,L){const o=[];let x=it;while(x&&x.p){x=L.find(y=>y.id===x.p);if(x)o.unshift(x.n)}return o.join(' › ')}
+function bdEl(e){let inner='',it=null,open='';
+ if(e.k==='n')inner=`<div class="bdg"></div><textarea data-bdt="${e.id}" ${BD.ro?'readonly':''} placeholder="Escreva…" maxlength="600">${esc(e.t||'')}</textarea>`;
+ else if(e.k==='i')inner=`<img src="${e.d}" draggable="false" alt="">`;
+ else{it=bdItem(e.r);inner=!it?'<div class="bdx">Item indisponível<small>O mestre retirou a liberação.</small></div>':it.k==='img'?`<img src="${it.d}" draggable="false" alt="${esc(it.n)}"><div class="bdx"><b>${esc(it.n)}</b></div>`:`<div class="bdx"><b>${ivIcon(it.k)} ${esc(it.n)}</b><small>${esc((it.b||'').slice(0,140))}</small></div>`;if(it)open=`<button class="bdo" data-a="iv:view:${esc(e.r)}">Abrir</button>`}
+ return `<div class="bde k${e.k}${BD.link===e.id?' lk':''}" data-bde="${e.id}" style="left:${e.x}px;top:${e.y}px;width:${e.w||200}px;${e.k==='n'?'background:'+esc(e.c||BDC[0]):''}"><span class="bdpin"></span>${inner}${open}${BD.ro?'':`<button class="bdd" data-a="iv:bd-del:${e.id}" aria-label="Remover">✕</button>`}</div>`}
+const bdPd=p=>{let d='M'+p[0]+' '+p[1];for(let i=2;i<p.length;i+=2)d+=' L'+p[i]+' '+p[i+1];if(p.length===2)d+=' l0.1 0.1';return d};
+function bdPaint(){const st=document.querySelector('.bds');if(!st||!BD.data)return;
+ st.innerHTML=`<svg class="bdsv0" width="${BDW}" height="${BDH}"></svg>${BD.data.e.map(bdEl).join('')}<svg class="bdsv1" width="${BDW}" height="${BDH}">${BD.data.s.map(s=>`<path d="${bdPd(s.p)}" stroke="${esc(s.c)}" stroke-width="${s.w}" fill="none" stroke-linecap="round" stroke-linejoin="round"/>`).join('')}</svg>`;bdLines()}
+function bdLines(){const sv=document.querySelector('.bdsv0');if(!sv)return;const st=sv.parentElement;let h='';
+ const pin=id=>{const el=st.querySelector(`[data-bde="${id}"]`);return el?[el.offsetLeft+el.offsetWidth/2,el.offsetTop+8]:null};
+ BD.data.l.forEach((l,i)=>{const a=pin(l.a),b=pin(l.b);if(!a||!b)return;const mx=(a[0]+b[0])/2,my=(a[1]+b[1])/2+Math.min(60,Math.hypot(a[0]-b[0],a[1]-b[1])*.12);
+  h+=`<path d="M${a[0]} ${a[1]} Q${mx} ${my} ${b[0]} ${b[1]}" stroke="#b3202b" stroke-width="3" fill="none" stroke-linecap="round"/><path data-lnk="${i}" d="M${a[0]} ${a[1]} Q${mx} ${my} ${b[0]} ${b[1]}" stroke="transparent" stroke-width="18" fill="none" style="pointer-events:${BD.mode==='link'&&!BD.ro?'stroke':'none'};cursor:pointer"/>`});
+ sv.innerHTML=h}
+function bdMount(){const st=document.querySelector('.bds');if(!st)return;if(!BD.data){st.innerHTML='<p class="note" style="padding:20px">Carregando quadro…</p>';return}
+ const v=st.closest('.bdv'),w=st.parentElement;st.style.transform=`scale(${BD.z})`;w.style.width=BDW*BD.z+'px';w.style.height=BDH*BD.z+'px';st.className='bds '+BD.mode+(BD.ro?' ro':'');bdPaint();v.scrollLeft=BD.sc.x;v.scrollTop=BD.sc.y;v.onscroll=()=>{BD.sc={x:v.scrollLeft,y:v.scrollTop}}}
+function bdAdd(e){e.id=uid();e.x=Math.round(BD.sc.x/BD.z+50+Math.random()*180);e.y=Math.round(BD.sc.y/BD.z+50+Math.random()*120);BD.data.e.push(e);bdPaint();bdSave()}
+function bdText(id,v){const e=BD.data&&BD.data.e.find(x=>x.id===id);if(!e||BD.ro)return;e.t=v;bdSave()}
+function boardView(c){ivSub();bdSub();const m=isMaster(c),own=BD.view===UID||BD.view==='_mesa',mesa=BD.view==='_mesa';BD.ro=!own;
+ const old=[...IV.pn,...IV.nt.filter(x=>x.uid===UID)].length,pen=BD.mode==='pen',cols=pen?BDP:BDC;
+ const mb=(k,l)=>`<button class="${BD.mode===k?'':'alt'} sm" data-a="iv:bd-mode:${k}">${l}</button>`;
+ const tools=own?`<div class="row bdtb" style="gap:6px;margin-bottom:8px">${mb('move','Mover')}${mb('link','Ligar')}${mb('pen','Desenhar')}${mb('erase','Borracha')}<span style="width:8px"></span><button class="sm" data-a="iv:bd-note">+ Post-it</button><label class="alt filebtn sm">Imagem<input type="file" accept="image/*" data-bdimg hidden></label><button class="alt sm" data-a="iv:bd-lib">Puxar da Investigação</button>${old&&!mesa&&!(BD.data&&BD.data.mig)?`<button class="alt sm" data-a="iv:bd-mig">Trazer anotações antigas (${old})</button>`:''}</div>
+  <div class="row bdtb" style="gap:6px;margin-bottom:8px">${cols.map(k=>`<button class="swb ${(pen?BD.pen:BD.col)===k?'on':''}" style="--c:${k}" data-a="iv:bd-col:${k}" aria-label="Cor ${k}"></button>`).join('')}${pen?[2,4,8].map(w=>`<button class="alt sm ${BD.w===w?'on':''}" data-a="iv:bd-w:${w}">${w}px</button>`).join('')+'<button class="alt sm" data-a="iv:bd-undo">Desfazer traço</button><button class="alt sm" data-a="iv:bd-clr">Limpar desenho</button>':''}<span style="flex:1"></span><button class="alt sm" data-a="iv:bd-full">${BD.full?'Sair da tela cheia':'Tela cheia'}</button><button class="alt sm" data-a="iv:bd-z:-" aria-label="Menos zoom">−</button><button class="alt sm" data-a="iv:bd-z:+" aria-label="Mais zoom">+</button></div>
+  <p class="note" style="margin:0 0 8px">${BD.mode==='link'?'Clique em dois itens para ligá-los com um barbante. Clique no barbante para cortar.':BD.mode==='pen'?'Desenhe livremente sobre o quadro.':BD.mode==='erase'?'Passe sobre um traço para apagá-lo.':(mesa?'Quadro compartilhado: todos da mesa editam ao mesmo tempo.':'Arraste os post-its pela faixa de cima. Seu quadro é visível ao mestre.')}</p>`
+  :`<div class="row" style="gap:6px;margin-bottom:8px"><span class="pill warn">Somente leitura</span><span style="flex:1"></span><button class="alt sm" data-a="iv:bd-full">${BD.full?'Sair da tela cheia':'Tela cheia'}</button><button class="alt sm" data-a="iv:bd-z:-">−</button><button class="alt sm" data-a="iv:bd-z:+">+</button></div>`;
+ const sel=`<select data-bdwho aria-label="Quadro"><option value="${esc(UID)}" ${BD.view===UID?'selected':''}>Meu quadro</option><option value="_mesa" ${mesa?'selected':''}>Quadro da mesa (todos)</option>${m?campPlayers(c).map(u=>`<option value="${esc(u)}" ${BD.view===u?'selected':''}>Quadro de ${esc(pname(u))}</option>`).join(''):''}</select>`;
+ let lib='';if(BD.lib){const L=bdItems(),ok=L.filter(x=>x.k==='img'||x.k==='text');lib=`<div class="modal" role="dialog" aria-modal="true"><div class="mbox"><div class="mhead"><div><small>INVESTIGAÇÃO</small><h2>Puxar para o quadro</h2></div></div>${ok.length?ok.map(x=>`<button class="alt rlr" style="width:100%;text-align:left" data-a="iv:bd-pull:${esc(x.id)}"><span>${ivIcon(x.k)} ${esc(x.n)}</span><small style="margin-left:auto;color:var(--mut)">${esc(bdPath(x,L))}</small></button>`).join(''):'<p class="note">Nada disponível ainda. Imagens e documentos liberados pelo mestre aparecem aqui.</p>'}<div class="row" style="margin-top:14px;justify-content:flex-end"><button class="alt" data-a="iv:bd-lib">Fechar</button></div></div></div>`}
+ setTimeout(bdMount,0);
+ return `<div class="bdbox${BD.full?' full':''}"><div class="tools bdhd"><div style="flex:1"><h2 class="ch">Quadro de investigação</h2><p class="note">${m?'Seu quadro, o quadro da mesa e os quadros dos jogadores.':'Seu quadro pessoal (o mestre vê) e o quadro da mesa, que todos editam.'}</p></div>${sel}</div>${tools}<div class="bdv"><div class="bdw"><div class="bds ${BD.mode}"></div></div></div></div>${lib}`}
+function bdPtr(ev){const r=document.querySelector('.bds').getBoundingClientRect();return[(ev.clientX-r.left)/BD.z,(ev.clientY-r.top)/BD.z]}
+function bdErase(x,y){const r=14/BD.z,n=BD.data.s.length;BD.data.s=BD.data.s.filter(s=>{for(let i=0;i<s.p.length;i+=2)if(Math.hypot(s.p[i]-x,s.p[i+1]-y)<r)return false;return true});if(BD.data.s.length!==n){bdPaint();bdSave()}}
+document.addEventListener('pointerdown',ev=>{const st=ev.target.closest&&ev.target.closest('.bds');if(!st||BD.ro||!BD.data||ev.target.closest('button'))return;
+ const el=ev.target.closest('.bde'),[x,y]=bdPtr(ev),lk=ev.target.closest('[data-lnk]');
+ if(lk&&BD.mode==='link'){BD.data.l.splice(+lk.dataset.lnk,1);bdLines();bdSave();return}
+ if(BD.mode==='pen'){const s={id:'s_'+uid(),o:Date.now(),c:BD.pen,w:BD.w,p:[Math.round(x),Math.round(y)]};BD.data.s.push(s);BD.drag={t:'pen',s};const sv=st.querySelector('.bdsv1');if(!sv){BD.data.s.pop();BD.drag=null;return}sv.insertAdjacentHTML('beforeend',`<path d="${bdPd(s.p)}" stroke="${esc(s.c)}" stroke-width="${s.w}" fill="none" stroke-linecap="round" stroke-linejoin="round"/>`);ev.preventDefault();return}
+ if(BD.mode==='erase'){BD.drag={t:'er'};bdErase(x,y);ev.preventDefault();return}
+ if(!el)return;const id=el.dataset.bde,e=BD.data.e.find(z=>z.id===id);if(!e)return;
+ if(BD.mode==='link'){if(!BD.link)BD.link=id;else if(BD.link!==id){const i=BD.data.l.findIndex(l=>(l.a===BD.link&&l.b===id)||(l.a===id&&l.b===BD.link));if(i>=0)BD.data.l.splice(i,1);else BD.data.l.push({a:BD.link,b:id});BD.link=null;bdSave()}else BD.link=null;bdPaint();return}
+ if(BD.mode==='move'&&ev.target.tagName!=='TEXTAREA'){BD.drag={t:'mv',id,dx:x-e.x,dy:y-e.y,el,sx:ev.clientX,sy:ev.clientY,moved:false};try{el.setPointerCapture(ev.pointerId)}catch(err){}ev.preventDefault()}});
+document.addEventListener('pointermove',ev=>{const d=BD.drag;if(!d||!document.querySelector('.bds'))return;const[x,y]=bdPtr(ev);
+ if(d.t==='pen'){const p=d.s.p;if(Math.hypot(x-p[p.length-2],y-p[p.length-1])<2)return;p.push(Math.round(x),Math.round(y));const pa=document.querySelector('.bdsv1 path:last-child');if(pa)pa.setAttribute('d',bdPd(p))}
+ else if(d.t==='er')bdErase(x,y);
+ else if(d.t==='mv'){const e=BD.data.e.find(z=>z.id===d.id);if(!e)return;if(!d.moved){if(Math.hypot(ev.clientX-d.sx,ev.clientY-d.sy)<6)return;d.moved=true}e.x=Math.max(0,Math.min(BDW-60,Math.round(x-d.dx)));e.y=Math.max(0,Math.min(BDH-40,Math.round(y-d.dy)));d.el.style.left=e.x+'px';d.el.style.top=e.y+'px';bdLines()}});
+const bdUp=()=>{const d=BD.drag;if(d){BD.drag=null;if(d.t==='mv'&&!d.moved){const ta=d.el&&d.el.querySelector('textarea');if(ta&&!BD.ro)ta.focus()}else bdSave()}};document.addEventListener('pointerup',bdUp);document.addEventListener('pointercancel',bdUp);
+async function bdClick(k,id){
+ if(!BD.data&&k!=='bd-lib')return true;
+ if(k==='bd-mode'){BD.mode=id;BD.link=null;render();return true}
+ if(k==='bd-col'){if(BD.mode==='pen')BD.pen=id;else BD.col=id;render();return true}
+ if(k==='bd-w'){BD.w=+id;render();return true}
+ if(k==='bd-note'){bdAdd({k:'n',t:'',c:BD.col,w:190});return true}
+ if(k==='bd-del'){const i=BD.data.e.findIndex(x=>x.id===id);if(i>=0){BD.data.e.splice(i,1);BD.data.l=BD.data.l.filter(l=>l.a!==id&&l.b!==id);if(BD.link===id)BD.link=null;bdPaint();bdSave()}return true}
+ if(k==='bd-undo'){BD.data.s.pop();bdPaint();bdSave();return true}
+ if(k==='bd-clr'){if(BD.data.s.length&&await askOk('Apagar todo o desenho do quadro?','Apagar')){BD.data.s=[];bdPaint();bdSave()}return true}
+ if(k==='bd-z'){BD.z=Math.max(.4,Math.min(1.4,BD.z+(id==='+'?.1:-.1)));bdMount();return true}
+ if(k==='bd-full'){BD.full=!BD.full;document.body.style.overflow=BD.full?'hidden':'';render();return true}
+ if(k==='bd-lib'){BD.lib=!BD.lib;render();return true}
+ if(k==='bd-pull'){BD.lib=false;render();bdAdd({k:'r',r:id,w:210});return true}
+ if(k==='bd-mig'){const L=[...IV.pn,...IV.nt.filter(x=>x.uid===UID)].sort((a,b)=>num(a.upd)-num(b.upd));let i=0;for(const n of L){BD.data.e.push({id:uid(),k:'n',t:((n.t?n.t+'\n':'')+(n.b||'')).slice(0,600),c:BDC[i%BDC.length],w:190,x:40+(i%6)*210,y:40+Math.floor(i/6)*190});i++}BD.data.mig=1;bdSave();render();toast(i+' anotação(ões) trazida(s) como post-it.');return true}
+ return true}
 async function ivClick(t){const d=t.dataset,a=d.a||'';if(!a.startsWith('iv:'))return false;const p=a.split(':'),k=p[1],id=p.slice(2).join(':');
+ if(k.startsWith('bd-'))return bdClick(k,id);
  if(k==='open'){IV.f=id;render();return true}
  if(k==='view'){IV.view=id;render();return true}
  if(k==='close'){IV.view=null;render();return true}
@@ -2564,26 +2695,44 @@ async function ivClick(t){const d=t.dataset,a=d.a||'';if(!a.startsWith('iv:'))re
  if(k==='edok'){const e=IV.ed;if(!e.n.trim()){toast('Dê um nome.');return true}
   const old=e.id&&IV.items.find(x=>x.id===e.id),it=Object.assign({},old||{id:uid(),k:e.k,p:IV.f,t:Date.now()},{n:e.n.trim().slice(0,80)});if(e.k==='text')it.b=(e.b||'').slice(0,20000);
   IV.ed=null;await ivPut(it);if(it.rel&&it.rel.m&&it.rel.m!=='none'){const vis=it.rel.m==='all'?['all']:it.rel.u;if(vis.length)await ivShare(it,vis)}render();return true}
- if(k==='del'){const it=IV.items.find(x=>x.id===id);if(!it||!confirm('Excluir “'+it.n+'”'+(it.k==='folder'?' e tudo dentro dela':'')+'?'))return true;await ivDelete(id);render();return true}
+ if(k==='del'){const it=IV.items.find(x=>x.id===id);if(!it||!(await askOk('Excluir “'+it.n+'”'+(it.k==='folder'?' e tudo dentro dela':'')+'?')))return true;await ivDelete(id);render();toast('Excluído.');return true}
  if(k==='rel'){const it=IV.items.find(x=>x.id===id);IV.rel={id,m:(it.rel&&it.rel.m)||'none',u:[...((it.rel&&it.rel.u)||[])]};render();return true}
  if(k==='relno'){IV.rel=null;render();return true}
  if(k==='relok'){const r=IV.rel;IV.rel=null;render();await ivRelease(r.id,r.m,r.u);render();toast(r.m==='none'?'Item retirado dos jogadores.':'Liberado.');return true}
- if(k==='nnew'){IV.ne={t:'',b:''};render();return true}
- if(k==='nedit'){const n=IV.nt.find(x=>x.id===id);IV.ne={id,t:n.t,b:n.b};render();return true}
+ if(k==='nnew'){const m=isMaster(campOf(campCur));IV.ne={t:'',b:'',tag:'Geral',col:NCOL[0],vis:m?'me':'master',to:[],pin:false};render();return true}
+ if(k==='nedit'){const n=[...IV.pn,...IV.nt].find(x=>x.id===id&&x.uid===UID);if(!n)return true;IV.ne={id,t:n.t||'',b:n.b||'',tag:n.tag||'Geral',col:n.col||NCOL[0],vis:nVis(n),to:[...(n.to||[])],pin:!!n.pin,pv:nVis(n)};render();return true}
  if(k==='neno'){IV.ne=null;render();return true}
+ if(k==='ncol'){IV.ne.col=p.slice(2).join(':');render();return true}
+ if(k==='nsec'){IV.nsec=id;render();return true}
+ if(k==='npin'){const n=[...IV.pn,...IV.nt].find(x=>x.id===id&&x.uid===UID);if(!n)return true;n.pin=!n.pin;render();const o=Object.assign({},n);delete o.id;if(o.vis==='me')delete o.vis;try{await (nVis(n)==='me'?DBH.collection('data/users/'+UID+'/nt_'+campCur+'/items'):ivNtc(campCur)).doc(id).set(o)}catch(err){wrErr(err)}return true}
  if(k==='neok'){const e=IV.ne;if(!e.t.trim()&&!e.b.trim()){toast('Escreva algo.');return true}
-  const nid=e.id||uid();IV.ne=null;const doc={uid:UID,t:e.t.trim().slice(0,60),b:e.b.slice(0,3000),upd:Date.now()};
-  IV.nt=[...IV.nt.filter(x=>x.id!==nid),Object.assign({id:nid},doc)];render();try{await ivNtc(campCur).doc(nid).set(doc)}catch(err){wrErr(err)}return true}
- if(k==='ndel'){const n=IV.nt.find(x=>x.id===id);if(!n||n.uid!==UID||!confirm('Excluir esta anotação?'))return true;IV.nt=IV.nt.filter(x=>x.id!==id);render();try{await ivNtc(campCur).doc(id).delete()}catch(err){wrErr(err)}return true}
+  const nid=e.id||uid();IV.ne=null;const priv=e.vis==='me',doc={uid:UID,t:e.t.trim().slice(0,60),b:e.b.slice(0,6000),tag:e.tag,col:e.col,pin:!!e.pin,upd:Date.now()};
+  if(!priv){doc.vis=e.vis;doc.to=e.vis==='sel'?e.to:[]}
+  IV.pn=IV.pn.filter(x=>x.id!==nid);IV.nt=IV.nt.filter(x=>x.id!==nid);
+  if(priv)IV.pn=[...IV.pn,Object.assign({id:nid,vis:'me'},doc)];else IV.nt=[...IV.nt,Object.assign({id:nid},doc)];
+  render();const pc=DBH.collection('data/users/'+UID+'/nt_'+campCur+'/items');
+  try{if(priv){await pc.doc(nid).set(doc);if(e.pv&&e.pv!=='me')await ivNtc(campCur).doc(nid).delete()}else{await ivNtc(campCur).doc(nid).set(doc);if(e.pv==='me')await pc.doc(nid).delete()}}catch(err){wrErr(err)}return true}
+ if(k==='ndel'){const m=isMaster(campOf(campCur)),n=[...IV.pn,...IV.nt].find(x=>x.id===id);if(!n||(n.uid!==UID&&!m))return true;if(!(await askOk('Excluir esta anotação?')))return true;
+  IV.pn=IV.pn.filter(x=>x.id!==id);IV.nt=IV.nt.filter(x=>x.id!==id);render();toast('Anotação excluída.');
+  try{if(nVis(n)==='me')await DBH.collection('data/users/'+UID+'/nt_'+campCur+'/items').doc(id).delete();else await ivNtc(campCur).doc(id).delete()}catch(err){wrErr(err)}return true}
  return false}
 function ivInput(t){const d=t.dataset;
  if(d.ivf){IV.ed[d.ivf]=t.value;return true}
+ if(d.bdt!==undefined){bdText(d.bdt,t.value);return true}
  if(d.ivn){IV.ne[d.ivn]=t.value;return true}
+ if(d.ivnq!==undefined){IV.nf.q=t.value;clearTimeout(IV.nqt);IV.nqt=setTimeout(()=>{render();const el=document.querySelector('[data-ivnq]');if(el){el.focus();const l=el.value.length;try{el.setSelectionRange(l,l)}catch(x){}}},250);return true}
  return false}
 function ivChange(t){const d=t.dataset;
  if(d.ivrel){IV.rel.m=d.ivrel;render();return true}
  if(d.ivu){IV.rel.u=t.checked?[...new Set([...IV.rel.u,d.ivu])]:IV.rel.u.filter(x=>x!==d.ivu);return true}
  if(d.ivq!==undefined){IV.nq=t.value;render();return true}
+ if(d.bdwho!==undefined){bdSwitch(t.value);return true}
+ if(d.bdimg!==undefined){const f=t.files&&t.files[0];t.value='';if(f)imgScale(f,480,.62,u=>bdAdd({k:'i',d:u,w:220}));return true}
+ if(d.ivnv!==undefined){IV.ne.vis=t.value;render();return true}
+ if(d.ivnu){IV.ne.to=t.checked?[...new Set([...IV.ne.to,d.ivnu])]:IV.ne.to.filter(x=>x!==d.ivnu);return true}
+ if(d.ivnp!==undefined){IV.ne.pin=t.checked;return true}
+ if(d.ivnt!==undefined){IV.nf.tag=t.value;render();return true}
+ if(d.ivnw!==undefined){IV.nf.who=t.value;render();return true}
  if(d.ivmv){const it=IV.items.find(x=>x.id===d.ivmv);if(it&&t.value){it.p=t.value==='__root'?'':t.value;ivPut(it).then(async()=>{if(it.rel&&it.rel.m&&it.rel.m!=='none'){const vis=it.rel.m==='all'?['all']:it.rel.u;if(vis.length)await ivShare(it,vis)}render()})}return true}
  if(d.ivfile!==undefined){const fs=[...(t.files||[])];t.value='';(async()=>{let n=0;for(const f of fs){const nm=f.name.replace(/\.[^.]+$/,'');
   const add=async o=>{await ivPut(Object.assign({id:uid(),p:IV.f,t:Date.now(),n:nm.slice(0,80)},o));n++;render()};
@@ -2631,6 +2780,7 @@ async function initDb(){
   const remote=snap.docs.filter(d=>d.id.startsWith('f_')).map(d=>{try{return normalize(JSON.parse(d.data().json))}catch(e){return null}}).filter(Boolean);
   const ids=new Set(remote.map(r=>r.id));sheets.filter(s=>!ids.has(s.id)).forEach(s=>persist(s));
   sheets=[...remote,...sheets.filter(s=>!ids.has(s.id))];lsSave();render()}catch(e){}}
+function askOk(msg,ok='Excluir'){return new Promise(res=>{const m=document.createElement('div');m.className='modal';m.setAttribute('role','dialog');m.setAttribute('aria-modal','true');m.style.zIndex=300;m.innerHTML=`<div class="mbox"><p style="font-size:16px">${esc(msg)}</p><div class="row" style="margin-top:14px;justify-content:flex-end"><button class="alt" data-x="n">Cancelar</button><button data-x="y">${esc(ok)}</button></div></div>`;m.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;e.stopPropagation();m.remove();res(b.dataset.x==='y')});document.body.appendChild(m)})}
 function toast(t,ms=2800){const el=$('#toast');el.textContent=t;el.style.display='block';clearTimeout(msgT);msgT=setTimeout(()=>el.style.display='none',ms)}
 function setPath(o,p,v){const k=p.split('.');while(k.length>1)o=o[k.shift()];o[k[0]]=v}
 function getPath(o,p){return p.split('.').reduce((a,k)=>a&&a[k],o)}
