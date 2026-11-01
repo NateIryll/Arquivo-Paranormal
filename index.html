@@ -935,6 +935,69 @@ button.sm{padding:6px 10px;font-size:12px}
 
 /* foco no conteúdo em telas pequenas */
 .seg3{scrollbar-width:none}.seg3::-webkit-scrollbar{display:none}
+/* ===== v13 · bureau =====
+   Inspirado na sinalização de agência do jogo Control: faixa de classificação,
+   navegação de arquivo lateral, réguas finas e o vermelho como tinta de carimbo. */
+.band{display:flex;gap:28px;align-items:center;padding:10px 0;margin:0 0 6px;border-bottom:1px solid var(--line);font:600 10.5px/1 var(--ui);letter-spacing:.26em;text-transform:uppercase;color:var(--mut2)}
+.band span:first-child{display:inline-flex;align-items:center;gap:10px;color:var(--ink)}
+.band span:first-child::before{content:"";width:8px;height:8px;background:var(--acc)}
+.band .bandr{margin-left:auto;color:var(--acc);border:1px solid color-mix(in srgb,var(--acc) 60%,transparent);padding:4px 8px}
+.brandrow{margin:14px 0 4px;padding-bottom:0;border-bottom:0}
+.brandrow h1{font:600 44px/1 var(--disp);letter-spacing:.1em}
+.brandrow .sigil{width:48px;height:56px}
+.wrap>.sub,.brandrow+.sub{margin:6px 0 22px;font-size:14.5px}
+
+@media(max-width:560px){.band{gap:12px;letter-spacing:.18em}.band span:nth-child(2){display:none}.brandrow h1{font-size:28px}h2.ch{font-size:24px}}
+/* home: índice do arquivo à esquerda no computador */
+.hlay{display:block}
+@media(min-width:1100px){
+ .hlay{display:grid;grid-template-columns:212px minmax(0,1fr);gap:32px;align-items:start}
+ .hnav{position:sticky;top:16px}
+ .hnav .seg3{flex-direction:column;gap:2px;padding:0;margin:0;background:transparent;border:0;border-top:1px solid var(--line);border-radius:0}
+ .hnav .seg3 button{flex:none;justify-content:flex-start;gap:12px;padding:13px 12px 13px 14px;border-radius:0;border-bottom:1px solid var(--line);border-left:2px solid transparent;font-size:13px;letter-spacing:.12em;box-shadow:none}
+ .hnav .seg3 button .ic{width:17px;height:17px;color:var(--mut2)}
+ .hnav .seg3 button.on{background:linear-gradient(90deg,color-mix(in srgb,var(--acc) 14%,transparent),transparent);border-left-color:var(--acc);box-shadow:none;color:var(--ink)}
+ .hnav .seg3 button.on .ic{color:var(--acc)}
+ .hmain{min-width:0}
+}
+/* títulos de seção como cabeçalho de arquivo */
+h2.ch{font:600 30px/1.1 var(--disp);letter-spacing:.08em;border:0;border-bottom:1px solid var(--line);padding:0 0 12px;margin:0 0 8px}
+h2.ch::before{display:none}
+.hmain>.tools:first-child,.hmain>.card:first-child{margin-top:0}
+
+/* ficha: barra fixa com o nome do agente (clip, não hidden: hidden quebra o sticky) */
+html,body{overflow-x:clip}
+.topbar.stb{position:sticky;top:0;z-index:60;align-items:center;margin:-14px -14px 16px;padding:10px 14px;background:color-mix(in srgb,var(--bg) 84%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.stn{display:flex;flex-direction:column;line-height:1.1;margin-right:auto;padding-left:6px;min-width:0}
+.stn b{font:600 19px var(--disp);letter-spacing:.1em;text-transform:uppercase;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.stn small{font-size:12.5px;color:var(--mut);letter-spacing:.04em}
+@media(max-width:820px){.stn{display:none}.topbar.stb{position:static;backdrop-filter:none}}
+
+/* painéis da ficha: cabeçalho com régua dupla, sem caixa dentro de caixa */
+.panel>h2,.card>h2{padding-bottom:11px;box-shadow:0 1px 0 rgba(0,0,0,.5)}
+.sheetgrid{gap:18px}
+
+/* quadro: papel grande, tamanho livre e alça de redimensionar */
+.bde.kp{display:flex;flex-direction:column;padding:30px 18px 18px 40px;color:#1d1a16;touch-action:none;cursor:grab;transform:rotate(-.4deg);
+ background:linear-gradient(90deg,transparent 28px,rgba(190,40,40,.38) 28px 29px,transparent 29px),repeating-linear-gradient(180deg,transparent 0 25px,rgba(60,90,140,.2) 25px 26px),#f2ede0;background-position:0 0,0 30px,0 0;box-shadow:0 2px 4px rgba(0,0,0,.35),0 14px 28px rgba(0,0,0,.4)}
+.bde.kp textarea{flex:1;width:100%;min-height:0;background:transparent;border:0;color:#1d1a16;font:15px/26px 'Special Elite','Courier New',monospace;resize:none;padding:0;outline:none;box-shadow:none;pointer-events:none}
+.bde.kp.ed textarea{pointer-events:auto;cursor:text}
+.bde.sz{display:flex;flex-direction:column}.bde.sz textarea{flex:1;height:auto;min-height:0}
+.bdrs{position:absolute;right:0;bottom:0;width:22px;height:22px;z-index:4;cursor:nwse-resize;touch-action:none;opacity:.55;transition:opacity var(--t-fast);
+ background:linear-gradient(135deg,transparent 52%,rgba(0,0,0,.45) 52% 60%,transparent 60% 70%,rgba(0,0,0,.45) 70% 78%,transparent 78%)}
+.bde:hover .bdrs{opacity:1}
+.bds:not(.move) .bdrs,.bds.ro .bdrs{display:none}
+@media(pointer:coarse){.bdrs{width:32px;height:32px;opacity:.85}}
+/* hexatombe: contadores de dias sem água/comida */
+.hxdays{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0}
+.hxd{display:grid;justify-items:center;gap:6px;padding:12px 10px;border:1px solid var(--line);border-radius:var(--r-lg);background:var(--panel2);text-align:center}
+.hxd.on{border-color:color-mix(in srgb,var(--bad) 55%,var(--line));background:color-mix(in srgb,var(--bad) 8%,var(--panel2))}
+.hxdl{font:600 11.5px var(--ui);letter-spacing:.08em;text-transform:uppercase;color:var(--mut)}
+.hxdc{display:flex;align-items:center;gap:12px}.hxdc b{font:600 30px/1 var(--disp);min-width:1.4em}
+.hxdc button{width:36px;height:36px;padding:0;font-size:18px}
+.hxd small{font-size:13px;color:var(--mut)}.hxd.on small{color:var(--bad)}
+button.lnk{background:none;border:0;box-shadow:none;padding:2px 4px;color:var(--man);font:500 13px var(--ui);text-transform:none;letter-spacing:0;text-decoration:underline;text-underline-offset:3px}
+@media(hover:hover){button.lnk:hover{background:none;color:var(--ink)}}
 @media(max-width:560px){
  .brandrow{flex-wrap:nowrap;gap:10px;align-items:center}
  .brandrow>div:not(.sigil){flex:1;min-width:0}
@@ -1368,10 +1431,12 @@ const hxOnS=s=>!!(s.rx&&s.rx.hx&&s.rx.hx.on);
 function campHexa(s){const c=s.camp&&campOf(s.camp);return !!(c&&(c.rules||[]).includes('hexa'))}
 function hxStFor(s){const c=s.camp&&campOf(s.camp);return c?hxStL(c):HXSTD}
 function hxMods(s){const c=s.camp&&campOf(s.camp),M=c?hxModsL(c):[];return M.length?`<details class="wzmore"><summary>Modificações da casa (${M.length})</summary>${M.map(x=>`<p class="note"><b>${esc(x.n)}</b>: ${esc(x.t)}</p>`).join('')}</details>`:''}
+// dias seguidos sem água (ag) ou comida (co); fichas antigas guardavam só um booleano
+const hxDg=(h,k)=>h['d'+k]!=null?clamp(num(h['d'+k]),0,99):(h[k]?1:0);
 function hxCard(s,f,C){if(!(campHexa(s)||hxOnS(s)))return'';
  if(campHexa(s)&&!hxOnS(s)){rxPut(s,'hx.on',1);queueSave()}
  const h=(s.rx&&s.rx.hx)||{},SL=hxStFor(s),role=h.role||'p',n=clamp(num(h.n),0,6),id='hx.',dn=Array.isArray(h.dn)?h.dn:[];
- const L=[];if(role==='d')L.push('PV máximos pela metade; –'+n+' em testes; –'+num(h.pvl)+' PV máx de sacrifícios');if(h.ag)L.push('Sem água: PV máx –10');if(h.co)L.push('Sem comida: PE máx –10');
+ const L=[];if(role==='d')L.push('PV máximos pela metade; –'+n+' em testes; –'+num(h.pvl)+' PV máx de sacrifícios');const da=hxDg(h,'ag'),dc=hxDg(h,'co');if(da)L.push(da+(da>1?' dias':' dia')+' sem água: PV máx –'+10*da);if(dc)L.push(dc+(dc>1?' dias':' dia')+' sem comida: PE máx –'+10*dc);
  for(const d of dn)L.push('Estigma cumprido — '+d.n+(hxBon(d)?' ['+hxBon(d)+']':''));
  if(dn.length){const nw=dn.map(d=>{const x=SL.find(y=>y.n===d.n);return x?{n:x.n,pv:num(x.pv),pe:num(x.pe),d:num(x.d),rd:num(x.rd)}:d});if(JSON.stringify(nw)!==JSON.stringify(dn)){rxPut(s,'hx.dn',nw);queueSave()}}
  return `<div class="card"><h2>Hexatombe</h2>
@@ -1379,7 +1444,8 @@ function hxCard(s,f,C){if(!(campHexa(s)||hxOnS(s)))return'';
  <div><label>Estigmas</label><button class="alt sm" data-rxa="hxmo">Abrir (${dn.length} cumprido(s))</button></div>
  <div><label>Sacrifícios sofridos</label><b>${n}</b></div></div>
 
- <div class="row"><button class="alt sm" data-rxa="hxsac">+ Sacrifício (–1d10 PV)</button></div><div class="row"><label class="tg"><input type="checkbox" data-rxp="${id}ag" ${h.ag?'checked':''}><span class="tgk" aria-hidden="true"></span><span>Sem água ontem</span></label><label class="tg"><input type="checkbox" data-rxp="${id}co" ${h.co?'checked':''}><span class="tgk" aria-hidden="true"></span><span>Sem comida ontem</span></label>${role==='d'?`<button class="alt sm" data-rxa="hxfort">Fortitude DT 20 (novo sacrifício)</button><button class="alt sm" data-rxa="hxrst">Zerar sacrifícios</button>`:''}</div>
+ <div class="row"><button class="alt sm" data-rxa="hxsac">+ Sacrifício (–1d10 PV)</button></div><div class="hxdays">${[['ag','Dias sem água','PV',da],['co','Dias sem comida','PE',dc]].map(([k,t,st,v])=>`<div class="hxd ${v?'on':''}"><span class="hxdl">${t}</span><div class="hxdc"><button class="alt sm" data-rxa="hxday|${k}|-1" aria-label="Menos um dia" ${v?'':'disabled'}>−</button><b aria-live="polite">${v}</b><button class="alt sm" data-rxa="hxday|${k}|1" aria-label="Mais um dia">+</button></div><small>${v?st+' máx –'+10*v:'Sem penalidade'}</small>${v?`<button class="lnk" data-rxa="hxday|${k}|0">${k==='ag'?'Bebeu':'Comeu'} — zerar</button>`:''}</div>`).join('')}</div>
+ <div class="row">${role==='d'?`<button class="alt sm" data-rxa="hxfort">Fortitude DT 20 (novo sacrifício)</button><button class="alt sm" data-rxa="hxrst">Zerar sacrifícios</button>`:''}</div>
  ${L.length?`<ul class="rxl">${L.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`:''}${hxMods(s)}</div>`}
 let hxMo=false;
 function hxModal(s){if(!hxMo)return'';const h=(s.rx&&s.rx.hx)||{},SL=hxStFor(s),dn=Array.isArray(h.dn)?h.dn:[];
@@ -1391,6 +1457,7 @@ function hxAct(s,f,a,r){const h=(s.rx&&s.rx.hx)||{};
  if(a==='hxmo'){hxMo=!hxMo;render();return}
  if(a==='hxdone'){const x=hxStFor(s)[+r[0]];if(!x)return;let dn=Array.isArray(h.dn)?h.dn.slice():[];const i=dn.findIndex(d=>d.n===x.n);if(i>=0)dn.splice(i,1);else dn.push({n:x.n,pv:num(x.pv),pe:num(x.pe),d:num(x.d),rd:num(x.rd)});rxPut(s,'hx.dn',dn);persist(s);render();return}
  if(a==='hxsac'){const n=clamp(num(h.n),0,6);if(n>=6){toast('Máximo de 6 sacrifícios.');return}const d=Math.floor(Math.random()*10)+1;rxPut(s,'hx.n',n+1);rxPut(s,'hx.pvl',num(h.pvl)+d);f.pv=Math.max(0,num(f.pv)-d);persist(s);render();showRoll({nome:'Sacrifício — perda de PV',faces:10,fs:[10],r:[d],sum:true,bonus:0,total:d});return}
+ if(a==='hxday'){const k=r[0]==='co'?'co':'ag',d=+r[1],v=d===0?0:clamp(hxDg(h,k)+d,0,99);rxPut(s,'hx.d'+k,v);rxPut(s,'hx.'+k,v>0);persist(s);render();return}
  if(a==='hxrst'){rxPut(s,'hx.n',0);rxPut(s,'hx.pvl',0);persist(s);render();return}
  if(a==='hxfort'){const C=calc(s,f),k=skillInfo(C,s,f,'Fortitude','vig');roll('Fortitude DT 20 (sacrifício)',k.dice,k.low,k.bonus)}}
 function rxAct(s,f,a,r){
@@ -1503,7 +1570,7 @@ function calc(s,f){
  const dsc=!!(R.desc&&s.rx&&s.rx.dsc);if(dsc){pv*=2;if(pd)pdv*=2;else{pe*=2;san*=2}}
  const hxs=(s.rx&&s.rx.hx&&s.rx.hx.on)?s.rx.hx:null;let hxp=0,hxd=0,hxrd=0;
  if(hxs){const hn=clamp(num(hxs.n),0,6);if(hxs.role==='d'){pv=Math.ceil(pv/2)-num(hxs.pvl);hxp=-hn||0}
-  if(hxs.ag)pv-=10;if(hxs.co){if(pd)pdv-=10;else pe-=10}
+  const hda=hxDg(hxs,'ag'),hdc=hxDg(hxs,'co');pv-=10*hda;if(pd)pdv-=10*hdc;else pe-=10*hdc;
   for(const sd of (Array.isArray(hxs.dn)?hxs.dn:[])){pv+=num(sd.pv);if(pd)pdv+=num(sd.pe);else pe+=num(sd.pe);hxd+=num(sd.d);hxrd+=num(sd.rd)}}
  const bx=f.bx||{},mb=s.active===1;pv=Math.max(1,pv+num(bx.pv)+(mb?MASK_BONUS.pv:0));if(pd)pdv=Math.max(0,pdv+num(bx.pd)+(mb?MASK_BONUS.pd:0));else{pe=Math.max(0,pe+num(bx.pe));san=Math.max(0,san+num(bx.san)+(mb?MASK_BONUS.pd:0))}
  let cap=A.for<=0?2:5*A.for,used=0,def=10+A.agi+num(f.defx)+cbDef(f),extraDesl=0;
@@ -1935,8 +2002,8 @@ function homeView(){
    <div class="sc mk0 jn"><b>Entrar com código</b><small>Receba o código do mestre</small><div class="row" style="flex-wrap:nowrap;width:100%"><input data-hin="jc" value="${esc(home.jc)}" placeholder="CÓDIGO" style="flex:1;min-width:0;text-transform:uppercase"><button data-a="cjoin">Entrar</button></div></div>
    ${CL.list.map(c=>`<article class="sc camp" data-copen="${esc(c.code)}" style="--h:${[...c.code].reduce((a,x)=>a+x.charCodeAt(0),0)%40-10}deg;${campStyle(c)}"><div class="scb"><span class="tag ${isMaster(c)?'m':''}">${isMaster(c)?'Mestre':'Jogador'}</span><h3>${esc(c.name)}</h3><small class="scc">${esc((c.desc||'').slice(0,90))}</small><small class="sct">${1+(c.players||[]).length} participante(s) · código ${esc(c.code)}</small><button class="go" data-copen="${esc(c.code)}">Abrir campanha</button></div></article>`).join('')}</div>
    ${home.newc?`<div class="modal" role="dialog" aria-modal="true"><div class="mbox"><div class="mhead"><div><small>NOVA CAMPANHA</small><h2>Criar campanha</h2></div></div><div><label>Nome</label><input data-hin="cn" value="${esc(home.cn)}" placeholder="Ex.: Passagem: A Ruptura"></div><div style="margin-top:8px"><label>Descrição</label><textarea data-hin="cd" placeholder="Sinopse para os jogadores">${esc(home.cd)}</textarea></div>${crlList(CRL(home.cr),'n')}<div class="row" style="margin-top:14px;justify-content:flex-end"><button class="alt" data-a="cnewno">Cancelar</button><button data-a="cmake">Criar</button></div></div></div>`:''}`}}
- return `<div class="brandrow"><div class="sigil">${SIGIL}</div><div><small class="cls">ORDO REALITAS · ACESSO RESTRITO</small><h1>Jogar</h1></div><button class="alt gear av0" data-ht="u" aria-label="Perfil">${PR.av?`<img src="${PR.av}" alt="">`:I.user}</button><button class="alt gear" data-a="openbank:rit" style="margin-left:auto" aria-label="Banco de dados">${I.book}</button><button class="alt gear" data-a="cfg" aria-label="Configurações">${I.gear}</button></div>
- <p class="sub">Suas fichas, campanhas e mundos em um só lugar. ${DBH?'Salvos na sua conta.':'Salvos neste navegador.'}</p>${tabs}${body}`}
+ return `<div class="band" aria-hidden="true"><span>Ordo Realitas</span><span>Arquivo Paranormal</span><span class="bandr">Acesso restrito</span></div><div class="brandrow"><div class="sigil">${SIGIL}</div><div><h1>Jogar</h1></div><button class="alt gear av0" data-ht="u" aria-label="Perfil">${PR.av?`<img src="${PR.av}" alt="">`:I.user}</button><button class="alt gear" data-a="openbank:rit" style="margin-left:auto" aria-label="Banco de dados">${I.book}</button><button class="alt gear" data-a="cfg" aria-label="Configurações">${I.gear}</button></div>
+ <p class="sub">Suas fichas, campanhas e mundos em um só lugar. ${DBH?'Salvos na sua conta.':'Salvos neste navegador.'}</p><div class="hlay"><nav class="hnav" aria-label="Seções">${tabs}</nav><div class="hmain">${body}</div></div>`}
 function campView(){const c=campOf(campCur);if(!c){return `<div class="topbar"><button class="alt" data-a="cback">‹ Voltar</button></div><div class="empty">Campanha não encontrada.</div>`}
  const m=isMaster(c),tabs=[['p','Personagens',I.user],['j','Jogadores',I.users],['c','Calendário',I.cal],['i','Investigação',I.search],['n','Quadro',I.book]].concat((c.rules||[]).length?[['r','Regras',I.gear]]:[]);if(m)tabs.push(['s','Escudo do Mestre',I.shield]);if(campTab==='s'&&!m)campTab='p';if(campTab!=='s'&&RL.code)shUnsub();
  let body='';
@@ -2626,9 +2693,11 @@ const bdItem=id=>bdItems().find(x=>x.id===id);
 function bdPath(it,L){const o=[];let x=it;while(x&&x.p){x=L.find(y=>y.id===x.p);if(x)o.unshift(x.n)}return o.join(' › ')}
 function bdEl(e){let inner='',it=null,open='';
  if(e.k==='n')inner=`<div class="bdg"></div><textarea data-bdt="${e.id}" ${BD.ro?'readonly':''} placeholder="Escreva…" maxlength="600">${esc(e.t||'')}</textarea>`;
+ else if(e.k==='p')inner=`<div class="bdg"></div><textarea data-bdt="${e.id}" ${BD.ro?'readonly':''} placeholder="Título, pistas, linha do tempo…" maxlength="4000">${esc(e.t||'')}</textarea>`;
  else if(e.k==='i')inner=`<img src="${e.d}" draggable="false" alt="">`;
  else{it=bdItem(e.r);inner=!it?'<div class="bdx">Item indisponível<small>O mestre retirou a liberação.</small></div>':it.k==='img'?`<img src="${it.d}" draggable="false" alt="${esc(it.n)}"><div class="bdx"><b>${esc(it.n)}</b></div>`:`<div class="bdx"><b>${ivIcon(it.k)} ${esc(it.n)}</b><small>${esc((it.b||'').slice(0,140))}</small></div>`;if(it)open=`<button class="bdo" data-a="iv:view:${esc(e.r)}">Abrir</button>`}
- return `<div class="bde k${e.k}${BD.link===e.id?' lk':''}" data-bde="${e.id}" style="left:${e.x}px;top:${e.y}px;width:${e.w||200}px;${e.k==='n'?'background:'+esc(e.c||BDC[0]):''}"><span class="bdpin"></span>${inner}${open}${BD.ro?'':`<button class="bdd" data-a="iv:bd-del:${e.id}" aria-label="Remover">✕</button>`}</div>`}
+ const tall=e.h&&(e.k==='n'||e.k==='p');
+ return `<div class="bde k${e.k}${BD.link===e.id?' lk':''}${tall?' sz':''}" data-bde="${e.id}" style="left:${e.x}px;top:${e.y}px;width:${e.w||200}px;${tall?'height:'+e.h+'px;':''}${e.k==='n'?'background:'+esc(e.c||BDC[0]):''}"><span class="bdpin"></span>${inner}${open}${BD.ro?'':`<button class="bdd" data-a="iv:bd-del:${e.id}" aria-label="Remover">✕</button><span class="bdrs" data-bdrs="${e.id}" title="Arraste para redimensionar"></span>`}</div>`}
 const bdPd=p=>{let d='M'+p[0]+' '+p[1];for(let i=2;i<p.length;i+=2)d+=' L'+p[i]+' '+p[i+1];if(p.length===2)d+=' l0.1 0.1';return d};
 function bdPaint(){const st=document.querySelector('.bds');if(!st||!BD.data)return;
  st.innerHTML=`<svg class="bdsv0" width="${BDW}" height="${BDH}"></svg>${BD.data.e.map(bdEl).join('')}<svg class="bdsv1" width="${BDW}" height="${BDH}">${BD.data.s.map(s=>`<path d="${bdPd(s.p)}" stroke="${esc(s.c)}" stroke-width="${s.w}" fill="none" stroke-linecap="round" stroke-linejoin="round"/>`).join('')}</svg>`;bdLines()}
@@ -2644,9 +2713,9 @@ function bdText(id,v){const e=BD.data&&BD.data.e.find(x=>x.id===id);if(!e||BD.ro
 function boardView(c){ivSub();bdSub();const m=isMaster(c),own=BD.view===UID||BD.view==='_mesa',mesa=BD.view==='_mesa';BD.ro=!own;
  const old=[...IV.pn,...IV.nt.filter(x=>x.uid===UID)].length,pen=BD.mode==='pen',cols=pen?BDP:BDC;
  const mb=(k,l)=>`<button class="${BD.mode===k?'':'alt'} sm" data-a="iv:bd-mode:${k}">${l}</button>`;
- const tools=own?`<div class="row bdtb" style="gap:6px;margin-bottom:8px">${mb('move','Mover')}${mb('link','Ligar')}${mb('pen','Desenhar')}${mb('erase','Borracha')}<span style="width:8px"></span><button class="sm" data-a="iv:bd-note">+ Post-it</button><label class="alt filebtn sm">Imagem<input type="file" accept="image/*" data-bdimg hidden></label><button class="alt sm" data-a="iv:bd-lib">Puxar da Investigação</button>${old&&!mesa&&!(BD.data&&BD.data.mig)?`<button class="alt sm" data-a="iv:bd-mig">Trazer anotações antigas (${old})</button>`:''}</div>
+ const tools=own?`<div class="row bdtb" style="gap:6px;margin-bottom:8px">${mb('move','Mover')}${mb('link','Ligar')}${mb('pen','Desenhar')}${mb('erase','Borracha')}<span style="width:8px"></span><button class="sm" data-a="iv:bd-note">+ Post-it</button><button class="alt sm" data-a="iv:bd-paper">+ Papel</button><label class="alt filebtn sm">Imagem<input type="file" accept="image/*" data-bdimg hidden></label><button class="alt sm" data-a="iv:bd-lib">Puxar da Investigação</button>${old&&!mesa&&!(BD.data&&BD.data.mig)?`<button class="alt sm" data-a="iv:bd-mig">Trazer anotações antigas (${old})</button>`:''}</div>
   <div class="row bdtb" style="gap:6px;margin-bottom:8px">${cols.map(k=>`<button class="swb ${(pen?BD.pen:BD.col)===k?'on':''}" style="--c:${k}" data-a="iv:bd-col:${k}" aria-label="Cor ${k}"></button>`).join('')}${pen?[2,4,8].map(w=>`<button class="alt sm ${BD.w===w?'on':''}" data-a="iv:bd-w:${w}">${w}px</button>`).join('')+'<button class="alt sm" data-a="iv:bd-undo">Desfazer traço</button><button class="alt sm" data-a="iv:bd-clr">Limpar desenho</button>':''}<span style="flex:1"></span><button class="alt sm" data-a="iv:bd-full">${BD.full?'Sair da tela cheia':'Tela cheia'}</button><button class="alt sm" data-a="iv:bd-z:-" aria-label="Menos zoom">−</button><button class="alt sm" data-a="iv:bd-z:+" aria-label="Mais zoom">+</button></div>
-  <p class="note" style="margin:0 0 8px">${BD.mode==='link'?'Clique em dois itens para ligá-los com um barbante. Clique no barbante para cortar.':BD.mode==='pen'?'Desenhe livremente sobre o quadro.':BD.mode==='erase'?'Passe sobre um traço para apagá-lo.':(mesa?'Quadro compartilhado: todos da mesa editam ao mesmo tempo.':'Arraste os post-its pela faixa de cima. Seu quadro é visível ao mestre.')}</p>`
+  <p class="note" style="margin:0 0 8px">${BD.mode==='link'?'Clique em dois itens para ligá-los com um barbante. Clique no barbante para cortar.':BD.mode==='pen'?'Desenhe livremente sobre o quadro.':BD.mode==='erase'?'Passe sobre um traço para apagá-lo.':(mesa?'Quadro compartilhado: todos da mesa editam ao mesmo tempo.':'Arraste os itens pela faixa de cima e redimensione pelo canto inferior direito. Seu quadro é visível ao mestre.')}</p>`
   :`<div class="row" style="gap:6px;margin-bottom:8px"><span class="pill warn">Somente leitura</span><span style="flex:1"></span><button class="alt sm" data-a="iv:bd-full">${BD.full?'Sair da tela cheia':'Tela cheia'}</button><button class="alt sm" data-a="iv:bd-z:-">−</button><button class="alt sm" data-a="iv:bd-z:+">+</button></div>`;
  const sel=`<select data-bdwho aria-label="Quadro"><option value="${esc(UID)}" ${BD.view===UID?'selected':''}>Meu quadro</option><option value="_mesa" ${mesa?'selected':''}>Quadro da mesa (todos)</option>${m?campPlayers(c).map(u=>`<option value="${esc(u)}" ${BD.view===u?'selected':''}>Quadro de ${esc(pname(u))}</option>`).join(''):''}</select>`;
  let lib='';if(BD.lib){const L=bdItems(),ok=L.filter(x=>x.k==='img'||x.k==='text');lib=`<div class="modal" role="dialog" aria-modal="true"><div class="mbox"><div class="mhead"><div><small>INVESTIGAÇÃO</small><h2>Puxar para o quadro</h2></div></div>${ok.length?ok.map(x=>`<button class="alt rlr" style="width:100%;text-align:left" data-a="iv:bd-pull:${esc(x.id)}"><span>${ivIcon(x.k)} ${esc(x.n)}</span><small style="margin-left:auto;color:var(--mut)">${esc(bdPath(x,L))}</small></button>`).join(''):'<p class="note">Nada disponível ainda. Imagens e documentos liberados pelo mestre aparecem aqui.</p>'}<div class="row" style="margin-top:14px;justify-content:flex-end"><button class="alt" data-a="iv:bd-lib">Fechar</button></div></div></div>`}
@@ -2657,6 +2726,8 @@ function bdErase(x,y){const r=14/BD.z,n=BD.data.s.length;BD.data.s=BD.data.s.fil
 document.addEventListener('pointerdown',ev=>{const st=ev.target.closest&&ev.target.closest('.bds');if(!st||BD.ro||!BD.data||ev.target.closest('button'))return;
  const el=ev.target.closest('.bde'),[x,y]=bdPtr(ev),lk=ev.target.closest('[data-lnk]');
  if(lk&&BD.mode==='link'){BD.data.l.splice(+lk.dataset.lnk,1);bdLines();bdSave();return}
+ const rs=ev.target.closest('[data-bdrs]');
+ if(rs&&BD.mode==='move'){const el2=rs.closest('.bde');BD.drag={t:'rs',id:rs.dataset.bdrs,el:el2,sx:ev.clientX,sy:ev.clientY,w0:el2.offsetWidth,h0:el2.offsetHeight,moved:true};try{rs.setPointerCapture(ev.pointerId)}catch(err){}ev.preventDefault();return}
  if(BD.mode==='pen'){const s={id:'s_'+uid(),o:Date.now(),c:BD.pen,w:BD.w,p:[Math.round(x),Math.round(y)]};BD.data.s.push(s);BD.drag={t:'pen',s};const sv=st.querySelector('.bdsv1');if(!sv){BD.data.s.pop();BD.drag=null;return}sv.insertAdjacentHTML('beforeend',`<path d="${bdPd(s.p)}" stroke="${esc(s.c)}" stroke-width="${s.w}" fill="none" stroke-linecap="round" stroke-linejoin="round"/>`);ev.preventDefault();return}
  if(BD.mode==='erase'){BD.drag={t:'er'};bdErase(x,y);ev.preventDefault();return}
  if(!el)return;const id=el.dataset.bde,e=BD.data.e.find(z=>z.id===id);if(!e)return;
@@ -2665,6 +2736,8 @@ document.addEventListener('pointerdown',ev=>{const st=ev.target.closest&&ev.targ
 document.addEventListener('pointermove',ev=>{const d=BD.drag;if(!d||!document.querySelector('.bds'))return;const[x,y]=bdPtr(ev);
  if(d.t==='pen'){const p=d.s.p;if(Math.hypot(x-p[p.length-2],y-p[p.length-1])<2)return;p.push(Math.round(x),Math.round(y));const pa=document.querySelector('.bdsv1 path:last-child');if(pa)pa.setAttribute('d',bdPd(p))}
  else if(d.t==='er')bdErase(x,y);
+ else if(d.t==='rs'){const e=BD.data.e.find(z=>z.id===d.id);if(!e)return;e.w=Math.max(120,Math.min(1400,Math.round(d.w0+(ev.clientX-d.sx)/BD.z)));d.el.style.width=e.w+'px';
+  if(e.k==='n'||e.k==='p'){e.h=Math.max(90,Math.min(1400,Math.round(d.h0+(ev.clientY-d.sy)/BD.z)));d.el.style.height=e.h+'px';d.el.classList.add('sz')}bdLines()}
  else if(d.t==='mv'){const e=BD.data.e.find(z=>z.id===d.id);if(!e)return;if(!d.moved){if(Math.hypot(ev.clientX-d.sx,ev.clientY-d.sy)<6)return;d.moved=true}e.x=Math.max(0,Math.min(BDW-60,Math.round(x-d.dx)));e.y=Math.max(0,Math.min(BDH-40,Math.round(y-d.dy)));d.el.style.left=e.x+'px';d.el.style.top=e.y+'px';bdLines()}});
 const bdUp=()=>{const d=BD.drag;if(d){BD.drag=null;if(d.t==='mv'&&!d.moved){const ta=d.el&&d.el.querySelector('textarea');if(ta&&!BD.ro)ta.focus()}else bdSave()}};document.addEventListener('pointerup',bdUp);document.addEventListener('pointercancel',bdUp);
 async function bdClick(k,id){
@@ -2673,6 +2746,7 @@ async function bdClick(k,id){
  if(k==='bd-col'){if(BD.mode==='pen')BD.pen=id;else BD.col=id;render();return true}
  if(k==='bd-w'){BD.w=+id;render();return true}
  if(k==='bd-note'){bdAdd({k:'n',t:'',c:BD.col,w:190});return true}
+ if(k==='bd-paper'){bdAdd({k:'p',t:'',w:380,h:480});return true}
  if(k==='bd-del'){const i=BD.data.e.findIndex(x=>x.id===id);if(i>=0){BD.data.e.splice(i,1);BD.data.l=BD.data.l.filter(l=>l.a!==id&&l.b!==id);if(BD.link===id)BD.link=null;bdPaint();bdSave()}return true}
  if(k==='bd-undo'){BD.data.s.pop();bdPaint();bdSave();return true}
  if(k==='bd-clr'){if(BD.data.s.length&&await askOk('Apagar todo o desenho do quadro?','Apagar')){BD.data.s=[];bdPaint();bdSave()}return true}
@@ -3084,7 +3158,7 @@ function editView(){
  const s=cur(),f=form(s),m=s.active===1,C=calc(s,f);
  const tabs=[['combate','Combate'],['hab','Habilidades'],['rit','Rituais'],['inv','Inventário']].concat(s.r&&(s.r.fervor||s.r.corpos)?[['pet','Companheiro']]:[],[['dados','Dados'],['regras','Regras'],['calc','Cálculos']]);
  const body={combate:combateTab,pet:petTab,hab:habTab,rit:ritTab,inv:invTab,dados:diceTab,regras:rulesTab,calc:calcTab}[tab]||combateTab;
- return `<div class="topbar"><button class="alt" data-a="back">‹ Fichas</button><div class="row">${m?`<button class="mk" data-a="keepask">${I.mask}Manter máscara</button>`:''}${campHexa(s)||hxOnS(s)?'<button class="mk" data-rxa="hxmo">Estigmas</button>':''}<button class="mk" data-a="mask">${I.mask}${m?'Tirar a máscara':(s.forms[1]?'Vestir máscara':'Criar máscara')}</button><button class="alt" data-a="openbank:rit">${I.book}Banco</button><button class="alt" data-a="share">Compartilhar</button><button class="alt gear" data-a="cfg" aria-label="Configurações">${I.gear}</button><button class="alt" data-a="del">${delArm?'Confirmar exclusão':'Excluir'}</button></div></div>
+ return `<div class="topbar stb"><button class="alt" data-a="back">‹ Fichas</button><div class="stn"><b>${esc(f.nome||'Sem nome')}</b><small>${esc(f.classe||'')}${f.classe?' · ':''}NEX ${num(f.nex)}%</small></div><div class="row">${m?`<button class="mk" data-a="keepask">${I.mask}Manter máscara</button>`:''}${campHexa(s)||hxOnS(s)?'<button class="mk" data-rxa="hxmo">Estigmas</button>':''}<button class="mk" data-a="mask">${I.mask}${m?'Tirar a máscara':(s.forms[1]?'Vestir máscara':'Criar máscara')}</button><button class="alt" data-a="openbank:rit">${I.book}Banco</button><button class="alt" data-a="share">Compartilhar</button><button class="alt gear" data-a="cfg" aria-label="Configurações">${I.gear}</button><button class="alt" data-a="del">${delArm?'Confirmar exclusão':'Excluir'}</button></div></div>
  ${m?`<div class="maskbar"><span class="pill">Máscara ativa${s.mk?` · mantida ×${s.mk}`:''}</span><span class="pill ok">+${MASK_BONUS.pv} PV · +${MASK_BONUS.pd} ${s.r.pd?'PD':'SAN'}</span><span class="note">Atributos, vida, perícias e dados essenciais são os mesmos da ficha normal; habilidades, rituais, inventário e notas são só da máscara.</span><span class="sw">${swatches(s)}</span></div>`:''}
  ${shareCode?`<div class="card"><h2>Código de compartilhamento</h2><p class="sub" style="margin-top:0">Envie este código a quem vai importar a ficha${shareCode.length<=8&&DBH?' (a pessoa precisa abrir esta mesma página)':''}.</p><div class="row"><input readonly value="${esc(shareCode)}" id="code" style="flex:1;min-width:160px"><button data-a="copy">Copiar</button></div></div>`:''}
  <div class="mnav"><button data-mv="p" class="${mview==='p'?'on':''}">Personagem</button><button data-mv="s" class="${mview==='s'?'on':''}">Perícias</button><button data-mv="x" class="${mview==='x'?'on':''}">Painel</button></div>
