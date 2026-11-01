@@ -813,7 +813,7 @@ input[type=number]{appearance:textfield;-moz-appearance:textfield}
 .idg input:focus,.idg select:focus,.pc .nm:focus{box-shadow:none;border-bottom-color:var(--man)}
 
 button{clip-path:none;border-radius:var(--r);font:600 13px/1.1 var(--ui);letter-spacing:.06em;text-transform:uppercase;padding:9px 14px;box-shadow:var(--hi);background:var(--acc);transition:background-color var(--t-fast) var(--ease),border-color var(--t-fast) var(--ease),color var(--t-fast) var(--ease),box-shadow var(--t-fast) var(--ease)}
-@media(hover:hover){button:hover{filter:none}:where(button):hover{background:var(--acc-h)}}
+@media(hover:hover){button:hover{filter:none}button:not([class]):hover{background:var(--acc-h)}}
 button:active{filter:brightness(.9)}
 button.alt{background:var(--panel3);border:1px solid var(--line2);color:var(--ink)}
 @media(hover:hover){button.alt:hover{background:#24201d;border-color:#5a4e46;color:var(--ink)}}
@@ -1177,6 +1177,192 @@ button.alt{background:rgba(0,0,0,.35);border:1px solid var(--line2);color:var(--
 
 /* celular */
 @media(max-width:560px){.brandrow h1{font-size:36px}h2.ch{font-size:30px}.band .bandd{display:none}.portrait{width:150px;height:180px}.card,.panel{padding:16px}}
+
+/* ===== v15 · grimório noturno =====
+   Refeito a partir das referências: vidro escuro e brilho etéreo (Formless),
+   escala editorial e blocos de sangue (VP), anotações de relatório (PRISMA).
+   Superfícies de vidro arredondadas, pílulas, réguas que se dissolvem. */
+:root{
+ --void:#050405;--bg:#050405;
+ --glass:rgba(22,19,20,.58);--glass2:rgba(255,255,255,.035);--glass-b:rgba(255,255,255,.085);--glass-b2:rgba(255,255,255,.16);
+ --ink:#ece6dc;--mut:#a29a92;--mut2:#6f6862;--man:#e3d6bb;--focus:#f0d9a2;
+ --acc:#d01f2c;--acc-h:#e8323f;--acc-g:rgba(208,31,44,.5);--bad:#ff5e57;--ok:#6fd08c;
+ --r:12px;--r-lg:18px;--pill:999px;
+ --blur:blur(16px) saturate(130%);
+ --sh-g:0 1px 0 rgba(255,255,255,.05) inset,0 30px 60px -28px rgba(0,0,0,.95);
+}
+/* fundo: vazio com nebulosas de sangue e granulado */
+body{background:
+ radial-gradient(48vw 34vw at 88% -6%,rgba(208,31,44,.22),transparent 70%),
+ radial-gradient(40vw 30vw at -6% 30%,rgba(120,20,40,.14),transparent 70%),
+ radial-gradient(60vw 40vw at 50% 115%,rgba(90,10,20,.18),transparent 70%),
+ var(--void);background-attachment:fixed}
+body::after{background:radial-gradient(ellipse at 50% 40%,transparent 50%,rgba(0,0,0,.6) 100%)}
+body::before{opacity:.06}
+.wrap{max-width:1480px;padding-inline:max(20px,env(safe-area-inset-left))}
+
+/* ===== superfícies de vidro (substituem as molduras com cantos) ===== */
+.card,.panel,.blist,.bdet,.sheetwrap,.sc:not(.fold):not(.mk0),.thc,.ivc,.cpc,.mpc,.msc,.npc,.ow,.ir,.hbs,.prof{
+ background:linear-gradient(180deg,var(--glass2),transparent 140px),var(--glass)!important;
+ border:1px solid var(--glass-b)!important;border-radius:var(--r-lg)!important;box-shadow:var(--sh-g);
+ backdrop-filter:var(--blur);-webkit-backdrop-filter:var(--blur)}
+.card,.panel{padding:22px}
+.mbox,.modal .mbox,.cdbox,.drawer{background:linear-gradient(180deg,rgba(255,255,255,.05),transparent 160px),rgba(16,13,14,.92)!important;border:1px solid var(--glass-b2)!important;border-radius:22px!important;box-shadow:0 40px 100px -20px rgba(0,0,0,.9),0 0 0 1px rgba(0,0,0,.6)}
+.drawer{border-radius:22px 0 0 22px!important;border-right:0!important}
+.modal{background:rgba(3,2,3,.66);backdrop-filter:blur(10px)}
+.wp,.inv,.cbit,.hbr,.twrow,.pl,.kv div,.lim div,.cbpv,.strip div,.pstat div,.hxd,.mhave,.mcost{border-radius:var(--r)!important;background:rgba(255,255,255,.03)!important;border:1px solid var(--glass-b)!important}
+
+/* títulos de painel: losango vermelho + rótulo + régua que se dissolve */
+h2{display:flex;align-items:center;gap:12px;font:500 11px/1.2 var(--mono);letter-spacing:.2em;text-transform:uppercase;color:var(--ink);text-decoration:none!important;margin:0 0 18px;padding:0;border:0}
+h2::before{content:"";flex:none;width:7px;height:7px;background:var(--acc);transform:rotate(45deg);box-shadow:0 0 10px var(--acc-g)}
+h2::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,var(--glass-b2),transparent)}
+h2.ch,.mhead h2,.drawer .dh h2,.cdhead h2,.cdd h2,.bh h2,.wzp h2,.hhero h2{display:block;font:600 44px/1 var(--serif);letter-spacing:.04em;text-transform:none}
+h2.ch::before,h2.ch::after,.mhead h2::before,.mhead h2::after,.drawer .dh h2::before,.drawer .dh h2::after,.cdhead h2::before,.cdhead h2::after,.cdd h2::before,.cdd h2::after,.bh h2::before,.bh h2::after,.wzp h2::before,.wzp h2::after{content:none}
+h2.ch{border:0;padding:0 0 6px;margin:0 0 6px}
+.mhead h2{font-size:32px}.drawer .dh h2{font-size:30px}.cdhead h2{font-size:26px}.cdd h2{font-size:46px}
+
+/* controles: pílulas */
+button{border-radius:var(--pill);font:600 11px/1 var(--mono);letter-spacing:.14em;padding:12px 18px;display:inline-flex;align-items:center;justify-content:center;gap:8px}
+button .ic{margin:0}
+button:not([class]),button.sm:not(.alt):not(.on){background:linear-gradient(180deg,#e0303c,#b8141f);box-shadow:inset 0 1px 0 rgba(255,255,255,.25),0 10px 26px -12px var(--acc-g)}
+@media(hover:hover){button:not([class]):hover,button.sm:not(.alt):not(.on):hover{background:linear-gradient(180deg,#ef4450,#c81c27)}}
+button.alt{background:rgba(255,255,255,.04);border:1px solid var(--glass-b2);color:var(--ink);box-shadow:none}
+@media(hover:hover){button.alt:hover{background:rgba(255,255,255,.09);border-color:rgba(255,255,255,.3)}}
+button.sm{padding:8px 13px;font-size:10.5px;letter-spacing:.08em}
+.gear{width:42px;height:42px;padding:0;border-radius:50%}
+input,textarea,select{border-radius:var(--r);background-color:rgba(0,0,0,.35);border:1px solid var(--glass-b2);font-size:15px}
+input:focus,textarea:focus,select:focus{border-color:var(--man);box-shadow:0 0 0 4px rgba(227,214,187,.1)}
+.idg input,.idg select,.pc .nm{border-radius:0;background-color:transparent}
+.sbx,.gsearch{border-radius:var(--pill)!important;background:rgba(0,0,0,.35)!important;border:1px solid var(--glass-b2)!important;padding:0 18px}
+.tools select{border-radius:var(--pill)}
+.pill,.chip,.fc,.rchip{border-radius:var(--pill)!important}
+/* estes botões são decorativos/transparentes: sem preenchimento de pílula */
+.vt button,.sr .dice,.sr .tb,.sr.srn .atb,.sr.srn .ex,.hxn,.hx .am,.tmp button,.chip button,.bdd,.lnk,.cph,.irh,.msc,.npc,.ivt,.cdc,.cdi,.tabs button,.seg button,.seg3 button,.pm button,.dpb,.swb,.elb2,.opt,.tf-th{box-shadow:none}
+.sr .dice,.sr .tb,.vt button,.tmp button,.chip button,.hx .am{background:transparent}
+
+/* ===== barra de navegação ===== */
+.tnav{position:sticky;top:10px;z-index:80;display:flex;align-items:center;gap:18px;margin:10px 0 0;padding:8px 10px 8px 16px;border-radius:var(--pill);background:rgba(14,11,12,.62);border:1px solid var(--glass-b);backdrop-filter:var(--blur);-webkit-backdrop-filter:var(--blur);box-shadow:0 20px 40px -24px rgba(0,0,0,.9)}
+.tbrand{display:flex;align-items:center;gap:10px;flex:none}
+.tbrand .sigil{width:30px;height:34px}
+.tbrand .sigil .ordo{filter:drop-shadow(0 0 8px var(--acc-g))}
+.tbrand b{font:600 19px/1 var(--serif);letter-spacing:.14em;text-transform:uppercase;white-space:nowrap}
+.tnav .hnav{flex:1;min-width:0;position:static}
+.tnav .hnav .seg3{flex-direction:row;justify-content:center;gap:2px;margin:0;padding:0;border:0;background:transparent;overflow-x:auto;scrollbar-width:none}
+.tnav .hnav .seg3 button{flex:none;border:0;border-radius:var(--pill);padding:10px 14px;font:500 10.5px var(--mono);letter-spacing:.14em;color:var(--mut);background:transparent;justify-content:center}
+.tnav .hnav .seg3 button .ic{width:15px;height:15px;color:inherit}
+@media(hover:hover){.tnav .hnav .seg3 button:hover{color:var(--ink);background:rgba(255,255,255,.05)}}
+.tnav .hnav .seg3 button.on{color:var(--ink);background:rgba(208,31,44,.16);box-shadow:inset 0 0 0 1px rgba(208,31,44,.45)}
+.tnav .hnav .seg3 button.on::after{content:none}
+.tnav .hnav .seg3 button.on .ic{color:var(--acc)}
+@media(min-width:1021px) and (max-width:1599px){.tnav .hnav .seg3 button .ic{display:none}.tnav .hnav .seg3 button{padding:10px 12px;letter-spacing:.11em}}
+@media(min-width:1021px) and (max-width:1240px){.tbrand b{display:none}}
+.tact{display:flex;gap:6px;flex:none}
+.tact .gear{width:38px;height:38px;min-height:38px;background:rgba(255,255,255,.04)}
+.hmain{margin-top:28px}
+
+/* ===== abertura ===== */
+.hhero{position:relative;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);align-items:center;gap:24px;min-height:440px;margin:18px 0 8px;padding:44px 48px;border-radius:28px;overflow:hidden;
+ background:radial-gradient(60% 90% at 78% 50%,rgba(208,31,44,.26),transparent 70%),linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.01));border:1px solid var(--glass-b)}
+.hhero::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(255,255,255,.018) 0 1px,transparent 1px 3px);pointer-events:none}
+.hht{position:relative;z-index:1}
+.hht h1{font:600 clamp(56px,7.4vw,112px)/.88 var(--serif);letter-spacing:.02em;text-transform:uppercase;margin:0 0 22px;text-wrap:balance}
+.hht p{max-width:44ch;margin:0 0 30px;color:var(--mut);font:400 13px/1.7 var(--mono);letter-spacing:.02em}
+.hha{display:flex;gap:10px;flex-wrap:wrap}
+.hha button{padding:15px 24px;font-size:11.5px}
+.hhart{position:relative;display:grid;place-items:center;height:100%;min-height:340px}
+.hhart::before{content:"";position:absolute;width:62%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(208,31,44,.55),transparent 66%);filter:blur(30px)}
+.hhart img{position:relative;width:min(430px,100%);opacity:.92;filter:drop-shadow(0 0 26px rgba(208,31,44,.55));animation:sigilspin 140s linear infinite}
+@keyframes sigilspin{to{transform:rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){.hhart img{animation:none}}
+
+/* ===== cards ===== */
+.cgrid{gap:18px}
+@media(hover:hover){.cgrid>.sc:not(.fold):not(.mk0):hover{transform:translateY(-3px);border-color:rgba(208,31,44,.45)!important;box-shadow:0 0 0 1px rgba(208,31,44,.25),0 30px 60px -24px rgba(0,0,0,.95)}}
+.sc:not(.fold):not(.mk0){overflow:hidden}
+.scp{border-radius:0}
+.scp::after{background:linear-gradient(90deg,transparent 55%,rgba(18,15,16,.95))}
+.scb .tag{color:var(--acc)}
+.go{border-radius:var(--pill)}
+.cgrid .sc:not(.fold) .go,.thc .go,.ivc .go{background:rgba(255,255,255,.04);border:1px solid var(--glass-b2);box-shadow:none}
+.sc.mk0,.sc.mk0:nth-child(even){border-radius:var(--r-lg);border:1px dashed var(--glass-b2);background:rgba(255,255,255,.02)}
+/* dossiês: pasta de vidro escuro com aba */
+.fold .ftab{border-radius:12px 12px 0 0;background:rgba(30,25,26,.9);border:1px solid var(--glass-b);border-bottom:0;clip-path:none;left:18px}
+.fold .fbody{border-radius:0 18px 18px 18px;background:linear-gradient(180deg,rgba(255,255,255,.05),transparent 120px),rgba(20,17,18,.88)!important;border:1px solid var(--glass-b)!important;backdrop-filter:var(--blur)}
+.fold .fph{border-radius:2px}
+.fold .go{border-radius:var(--pill);left:18px;right:18px;bottom:14px}
+.sc.fold{filter:drop-shadow(0 18px 24px rgba(0,0,0,.6))}
+
+/* ===== abas e segmentos ===== */
+.seg3,.seg{border-radius:var(--pill)!important;background:rgba(0,0,0,.35)!important;border:1px solid var(--glass-b)!important;padding:4px!important}
+.seg3 button,.seg button{border-radius:var(--pill)!important;font:500 10.5px var(--mono);letter-spacing:.12em}
+.seg3 button.on,.seg button.on{background:rgba(255,255,255,.09)!important;box-shadow:inset 0 0 0 1px var(--glass-b2)!important;color:var(--ink)}
+/* abas da ficha: quebram em linhas, todas sempre acessíveis */
+.tabs{display:flex;flex-wrap:wrap;gap:4px;overflow:visible;border:0;border-radius:var(--r-lg);background:rgba(0,0,0,.35);padding:5px;margin-bottom:16px;border:1px solid var(--glass-b)}
+.tabs button{flex:1 1 auto;border:0;border-radius:var(--pill);margin:0;padding:10px 12px;font:500 10.5px var(--mono);letter-spacing:.12em;color:var(--mut);background:transparent}
+@media(hover:hover){.tabs button:hover{color:var(--ink);background:rgba(255,255,255,.05)}}
+.tabs button.on{color:#fff;background:linear-gradient(180deg,#d4283a,#a3131d);box-shadow:0 8px 20px -10px var(--acc-g)}
+
+/* ===== ficha ===== */
+.topbar.stb{top:10px;margin:10px 0 18px;padding:8px 10px 8px 10px;border-radius:var(--pill);background:rgba(14,11,12,.66);border:1px solid var(--glass-b);backdrop-filter:var(--blur);-webkit-backdrop-filter:var(--blur)}
+.stn b{font:600 22px var(--serif);letter-spacing:.08em}
+.stb .row{gap:6px}
+/* colunas proporcionais: cada uma rola sozinha no computador */
+@media(min-width:1280px){
+ .sheetgrid{grid-template-columns:330px minmax(0,1fr) minmax(0,1.15fr);gap:18px;align-items:stretch}
+ .sheetgrid>section{position:sticky;top:84px;height:calc(100vh - 96px);overflow-y:auto;overscroll-behavior:contain;padding:0 6px 24px 0;scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.14) transparent}
+ .sheetgrid>section::-webkit-scrollbar{width:6px}
+ .sheetgrid>section::-webkit-scrollbar-thumb{background:rgba(255,255,255,.14);border:0;border-radius:6px}
+ .c3>.tabs{position:sticky;top:0;z-index:5;background:rgba(10,8,9,.88);backdrop-filter:var(--blur)}
+ .c2 .sh{position:sticky;top:0;z-index:4;background:rgba(12,10,11,.92);padding-block:8px;margin-inline:-4px}
+}
+/* entre tablet e notebook: duas colunas, ficha à esquerda fixa */
+@media(min-width:1021px) and (max-width:1279px){
+ .sheetgrid{grid-template-columns:330px minmax(0,1fr);grid-template-areas:"a b" "a c";align-items:start}
+ .sheetgrid>.c1{grid-area:a;position:sticky;top:84px;max-height:calc(100vh - 96px);overflow-y:auto;scrollbar-width:thin}
+ .sheetgrid>.c2{grid-area:b}.sheetgrid>.c3{grid-area:c}
+}
+.panel{padding:20px}
+.portrait{width:190px;height:230px;border-radius:16px;border:1px solid var(--glass-b2);padding:0;overflow:hidden;background:#070606;box-shadow:0 24px 50px -20px rgba(0,0,0,.95),0 0 0 6px rgba(255,255,255,.025)}
+.portrait img{border-radius:0;outline:0}
+.pc .nm{font:600 26px var(--serif);letter-spacing:.05em;border-bottom:1px solid var(--glass-b);text-transform:uppercase;text-overflow:ellipsis}
+.hx{background:rgba(236,230,220,.82)}
+.hc{box-shadow:0 0 0 5px #0a0809,0 0 0 6px rgba(236,230,220,.6),0 0 40px rgba(208,31,44,.35)}
+.vt{border-radius:var(--pill)!important;height:40px;border:1px solid var(--glass-b2);background:rgba(0,0,0,.45);overflow:visible}
+.vt i,.vt>i{border-radius:var(--pill)!important}
+.gl{border-radius:50%!important;left:-16px;width:34px;height:34px;background:#0b0909;border:1px solid var(--glass-b2)}
+.sr.srn{border-radius:var(--r);border-bottom:0;margin-top:3px;background:rgba(255,255,255,.02)}
+@media(hover:hover){.sr.srn:hover{background:rgba(255,255,255,.05)}}
+.sr.srn .dice{border-radius:10px}
+.sr.srn .atb,.sr.srn .ex{border-left:1px solid var(--glass-b)}
+.shield{border-radius:4px}
+.lim b,.pstat b{font-family:var(--serif)}
+.cdbox{overflow:hidden}
+.cdc,.cdi{border-radius:var(--r)}
+.cdc.on,.cdi.on{background:rgba(208,31,44,.14);border-color:rgba(208,31,44,.4)}
+
+/* ===== celular ===== */
+@media(max-width:1020px){
+ .tnav{flex-wrap:wrap;border-radius:22px;padding:10px 12px;top:6px}
+ .tnav .hnav{order:3;flex-basis:100%}
+ .tnav .hnav .seg3{justify-content:flex-start;-webkit-mask:linear-gradient(90deg,#000 85%,transparent);mask:linear-gradient(90deg,#000 85%,transparent)}
+ .tact{margin-left:auto}
+ .hhero{grid-template-columns:1fr;padding:30px 24px;min-height:0}
+ .hhart{position:absolute;right:-60px;top:-30px;width:300px;min-height:0;opacity:.35}
+ .topbar.stb{border-radius:20px}
+}
+@media(max-width:560px){
+ .wrap{padding-inline:14px}
+ .tbrand{flex:1;min-width:0}.tbrand b{font-size:13px;letter-spacing:.04em;overflow:hidden;text-overflow:ellipsis}
+ .tnav{gap:8px;flex-wrap:wrap}.tact{margin-left:0}
+ .hha button{white-space:nowrap;padding:14px 16px;font-size:10.5px}
+ .tact{gap:4px}.tact .gear{width:36px!important;height:36px!important;min-width:36px!important;min-height:36px!important}
+ .hhero{grid-template-columns:minmax(0,1fr);padding:26px 20px}
+ .hht h1{font-size:36px}
+ .hht p{font-size:12px}
+ .hha button{flex:1}
+ h2.ch{font-size:34px}
+ .card,.panel{padding:16px}
+}
 
 </style>
 </head>
@@ -2159,9 +2345,9 @@ function homeView(){
   list=[...list].sort((a,b)=>home.sort==='nome'?String(a.forms[0].nome).localeCompare(b.forms[0].nome):num(b.upd)-num(a.upd));
   body=`<div class="tools"><label class="sbx">${I.search}<input data-hin="q" value="${esc(home.q)}" placeholder="Buscar pelo nome da ficha, classe ou campanha…" aria-label="Buscar fichas"></label>
   <select data-hs aria-label="Ordenar"><option value="rec" ${home.sort==='rec'?'selected':''}>Recentes</option><option value="nome" ${home.sort==='nome'?'selected':''}>Nome (A–Z)</option></select>
-  <button class="alt" data-a="newq">${I.file}Ficha em branco</button><button class="alt" data-a="himp">${I.dl}Importar ficha</button></div>
+  <button class="alt" data-a="himp">${I.dl}Importar ficha</button></div>
   ${home.imp?`<div class="card"><h2>Importar ficha</h2><div class="row"><input id="imp" placeholder="Cole o código de compartilhamento" style="flex:1;min-width:160px"><button data-a="imp">Importar</button></div></div>`:''}
-  <div class="cgrid"><button class="sc mk0" data-a="new"><span class="plus">${I.plus}</span><b>Criar ficha</b><small>Com assistente passo a passo</small></button>${list.map(sheetCard).join('')}</div>
+  <div class="cgrid">${sheets.length?'':`<button class="sc mk0" data-a="new"><span class="plus">${I.plus}</span><b>Criar ficha</b><small>Com assistente passo a passo</small></button>`}${list.map(sheetCard).join('')}</div>
   ${!sheets.length?'<p class="note" style="margin-top:14px">Nenhuma ficha ainda. Crie a primeira com o assistente, comece uma em branco ou importe um código.</p>':''}`}
  else if(home.tab==='a')body=ameacasView();
  else if(home.tab==='h')body=hbView();
@@ -2178,8 +2364,8 @@ function homeView(){
    <div class="sc mk0 jn"><b>Entrar com código</b><small>Receba o código do mestre</small><div class="row" style="flex-wrap:nowrap;width:100%"><input data-hin="jc" value="${esc(home.jc)}" placeholder="CÓDIGO" style="flex:1;min-width:0;text-transform:uppercase"><button data-a="cjoin">Entrar</button></div></div>
    ${CL.list.map(c=>`<article class="sc camp" data-copen="${esc(c.code)}" style="--h:${[...c.code].reduce((a,x)=>a+x.charCodeAt(0),0)%40-10}deg;${campStyle(c)}"><div class="scb"><span class="tag ${isMaster(c)?'m':''}">${isMaster(c)?'Mestre':'Jogador'}</span><h3>${esc(c.name)}</h3><small class="scc">${esc((c.desc||'').slice(0,90))}</small><small class="sct">${1+(c.players||[]).length} participante(s) · código ${esc(c.code)}</small><button class="go" data-copen="${esc(c.code)}">Abrir campanha</button></div></article>`).join('')}</div>
    ${home.newc?`<div class="modal" role="dialog" aria-modal="true"><div class="mbox"><div class="mhead"><div><small>NOVA CAMPANHA</small><h2>Criar campanha</h2></div></div><div><label>Nome</label><input data-hin="cn" value="${esc(home.cn)}" placeholder="Ex.: Passagem: A Ruptura"></div><div style="margin-top:8px"><label>Descrição</label><textarea data-hin="cd" placeholder="Sinopse para os jogadores">${esc(home.cd)}</textarea></div>${crlList(CRL(home.cr),'n')}<div class="row" style="margin-top:14px;justify-content:flex-end"><button class="alt" data-a="cnewno">Cancelar</button><button data-a="cmake">Criar</button></div></div></div>`:''}`}}
- return `<div class="band" aria-hidden="true"><span>Ordo Realitas</span><span>Arquivo Paranormal</span><span class="bandd">Reg. ${new Date().toLocaleDateString('pt-BR')}</span><span class="bandr">Acesso restrito</span></div><div class="brandrow"><div class="sigil">${SIGIL}</div><div><h1>Jogar</h1></div><button class="alt gear av0" data-ht="u" aria-label="Perfil">${PR.av?`<img src="${PR.av}" alt="">`:I.user}</button><button class="alt gear" data-a="openbank:rit" style="margin-left:auto" aria-label="Banco de dados">${I.book}</button><button class="alt gear" data-a="cfg" aria-label="Configurações">${I.gear}</button></div>
- <p class="sub">Suas fichas, campanhas e mundos em um só lugar. ${DBH?'Salvos na sua conta.':'Salvos neste navegador.'}</p><div class="hlay"><nav class="hnav" aria-label="Seções">${tabs}</nav><div class="hmain">${body}</div></div>`}
+ const hero=home.tab==='p'?`<section class="hhero"><div class="hht"><h1>Arquivo<br>Paranormal</h1><p>Suas fichas, campanhas e mundos em um só lugar. ${DBH?'Salvos na sua conta.':'Salvos neste navegador.'}</p><div class="hha"><button data-a="new">${I.plus}Criar ficha</button><button class="alt" data-a="newq">${I.file}Ficha em branco</button></div></div><div class="hhart" aria-hidden="true"><img src="ri/sinais_abd.webp" alt=""></div></section>`:'';
+ return `<header class="tnav"><div class="tbrand"><div class="sigil">${SIGIL}</div><b>Arquivo Paranormal</b></div><nav class="hnav" aria-label="Seções">${tabs}</nav><div class="tact"><button class="alt gear" data-a="openbank:rit" aria-label="Banco de dados">${I.book}</button><button class="alt gear" data-a="cfg" aria-label="Configurações">${I.gear}</button><button class="alt gear av0" data-ht="u" aria-label="Perfil">${PR.av?`<img src="${PR.av}" alt="">`:I.user}</button></div></header>${hero}<div class="hmain">${body}</div>`}
 function campView(){const c=campOf(campCur);if(!c){return `<div class="topbar"><button class="alt" data-a="cback">‹ Voltar</button></div><div class="empty">Campanha não encontrada.</div>`}
  const m=isMaster(c),tabs=[['p','Personagens',I.user],['j','Jogadores',I.users],['c','Calendário',I.cal],['i','Investigação',I.search],['n','Quadro',I.book]].concat((c.rules||[]).length?[['r','Regras',I.gear]]:[]);if(m)tabs.push(['s','Escudo do Mestre',I.shield]);if(campTab==='s'&&!m)campTab='p';if(campTab!=='s'&&RL.code)shUnsub();
  let body='';
